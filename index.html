@@ -4,44 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trevor Clarke's Personal Site</title>
+    <style>
+        /* Add basic styling here */
+        body { font-family: Arial, sans-serif; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
 </head>
 <body>
-    <h1>Hey there! 👋</h1>
-    <p>I'm <strong>Trevor Clarke</strong>, a human based in Canada. I work for <a href="https://github.com/Shopify" target="_blank" rel="noopener noreferrer">Shopify</a> and contribute to <a href="https://shopify.engineering/how-shopify-reduced-storefront-response-times-rewrite" target="_blank" rel="noopener noreferrer">Storefront Renderer</a>.</p>
-    <p>So far I've experienced <strong>5 years of school</strong>, <strong>6 internships</strong>, and countless <strong>amazing people</strong>.</p>
-    <p>If you'd like to get in touch, reach out to me on <a href="https://linkedin.com/in/trevorclarketc" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
-    <div align="left">
-        <details>
-            <summary><i>click to see a timeline</i></summary>
-            <pre>
-gantt
-    dateFormat  YYYY-MM-DD
-    
-    section Shopify
-    Developer @ Shopify's SFR :a1, 2023-09-01, 2024-02-09
-    Intern @ Shopify's SFR    :after a1, 2022-01-01, 2023-05-31
-    Intern @ Shopify's SFN :2021-05-01, 2021-12-31
-    
-    section BMO
-    Intern @ BMO    :2020-09-01, 2021-04-30
-    
-    section BeeHome
-    Intern    :2020-01-01, 2020-08-31
-    
-    section School
-    Education :2018-01-01, 2023-05-31
-            </pre>
-        </details>
-    </div>
-    <br>
-    <div align="left">
+    <header>
+        <h1>Hey there! 👋</h1>
+    </header>
+    <main>
+        <p>I'm <strong>Trevor Clarke</strong>, a human based in Canada. I work for <a href="https://github.com/Shopify" target="_blank" rel="noopener noreferrer">Shopify</a> and contribute to <a href="https://shopify.engineering/how-shopify-reduced-storefront-response-times-rewrite" target="_blank" rel="noopener noreferrer">Storefront Renderer</a>.</p>
+        <p>So far I've experienced <strong>5 years of school</strong>, <strong>6 internships</strong>, and countless <strong>amazing people</strong>.</p>
+        <p>If you'd like to get in touch, reach out to me on <a href="https://linkedin.com/in/trevorclarketc" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+        <section style="margin-bottom: 20px;">
+            <details>
+                <summary><i>Click to see a timeline</i></summary>
+                <p>This is a simplified timeline of my experiences. For a detailed visual, consider visiting my LinkedIn profile.</p>
+                <ul>
+                    <li>Developer @ Shopify's SFR: Sep 2023 - Present</li>
+                    <li>Intern @ Shopify's SFR: Jan 2022 - May 2023</li>
+                    <li>Intern @ Shopify's SFN: May 2021 - Dec 2021</li>
+                    <li>Intern @ BMO: Sep 2020 - Apr 2021</li>
+                    <li>Intern @ BeeHome: Jan 2020 - Aug 2020</li>
+                    <li>Education: Jan 2018 - May 2023</li>
+                </ul>
+            </details>
+        </section>
         <table>
             <tr>
-                <th><a href="/books/README.md">bookshelf</a></th>
-                <th>#todo</th>
-                <th>#todo</th>
+                <th>Resources</th>
+                <th>Projects</th>
+                <th>Contact</th>
+            </tr>
+            <tr>
+                <td><a href="/books/README.md">Bookshelf</a></td>
+                <td>Project Portfolio</td>
+                <td>Email me</td>
             </tr>
         </table>
-    </div>
+    </main>
 </body>
 </html>
