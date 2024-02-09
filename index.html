@@ -5,35 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trevor Clarke's Personal Site</title>
     <style>
-        /* Add basic styling here */
-        body { font-family: Arial, sans-serif; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        header, main {
+            padding: 20px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Hey there! 👋</h1>
-    </header>
-    <main>
-        <p>I'm <strong>Trevor Clarke</strong>, a human based in Canada. I work for <a href="https://github.com/Shopify" target="_blank" rel="noopener noreferrer">Shopify</a> and contribute to <a href="https://shopify.engineering/how-shopify-reduced-storefront-response-times-rewrite" target="_blank" rel="noopener noreferrer">Storefront Renderer</a>.</p>
-        <p>So far I've experienced <strong>5 years of school</strong>, <strong>6 internships</strong>, and countless <strong>amazing people</strong>.</p>
-        <p>If you'd like to get in touch, reach out to me on <a href="https://linkedin.com/in/trevorclarketc" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
-        <section style="margin-bottom: 20px;">
-            <details>
-                <summary><i>Click to see a timeline</i></summary>
-                <p>This is a simplified timeline of my experiences. For a detailed visual, consider visiting my LinkedIn profile.</p>
-                <ul>
-                    <li>Developer @ Shopify's SFR: Sep 2023 - Present</li>
-                    <li>Intern @ Shopify's SFR: Jan 2022 - May 2023</li>
-                    <li>Intern @ Shopify's SFN: May 2021 - Dec 2021</li>
-                    <li>Intern @ BMO: Sep 2020 - Apr 2021</li>
-                    <li>Intern @ BeeHome: Jan 2020 - Aug 2020</li>
-                    <li>Education: Jan 2018 - May 2023</li>
-                </ul>
-            </details>
-        </section>
-        <section>
-            <p>For the time being, all of my domains will be redirected here. This is to consolidate my online presence and ensure that you can find all relevant information in one place. If you're looking for content that was previously hosted on another domain, it can now be found here.</p>
-        </section>
-    </main>
+    <div class="container">
+        <header>
+            <h1>Hey there! 👋</h1>
+        </header>
+        <main>
+            <p>I'm <strong>Trevor Clarke</strong>, a human based in Canada. I work for <a href="https://github.com/Shopify" target="_blank" rel="noopener noreferrer">Shopify</a> and contribute to <a href="https://shopify.engineering/how-shopify-reduced-storefront-response-times-rewrite" target="_blank" rel="noopener noreferrer">Storefront Renderer</a>.</p>
+            <p>So far I've experienced <strong>5 years of school</strong>, <strong>6 internships</strong>, and countless <strong>amazing people</strong>.</p>
+            <p>If you'd like to get in touch, reach out to me on <a href="https://linkedin.com/in/trevorclarketc" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+            <section style="margin-bottom: 20px;">
+                <details>
+                    <summary><i>Click to see a timeline</i></summary>
+                    <p>This is a simplified timeline of my experiences. For a detailed visual, consider visiting my LinkedIn profile.</p>
+                    <ul>
+                        <li>Developer @ Shopify's SFR: Sep 2023 - Present</li>
+                        <li>Intern @ Shopify's SFR: Jan 2022 - May 2023</li>
+                        <li>Intern @ Shopify's SFN: May 2021 - Dec 2021</li>
+                        <li>Intern @ BMO: Sep 2020 - Apr 2021</li>
+                        <li>Intern @ BeeHome: Jan 2020 - Aug 2020</li>
+                        <li>Education: Jan 2018 - May 2023</li>
+                    </ul>
+                </details>
+            </section>
+            <section>
+                <p>For the time being, all of my domains will be redirected here. This is to consolidate my online presence and ensure that you can find all relevant information in one place. If you're looking for content that was previously hosted on another domain, it can now be found here.</p>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
