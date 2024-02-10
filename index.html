@@ -37,12 +37,18 @@
         text-align: center;
         font-style: italic;
       }
+      .profile-section {
+        display: flex;
+        align-items: center;
+      }
       .profile-image {
         width: 100px;
         height: 100px;
         border-radius: 50%;
-        margin: 20px auto;
         display: block;
+      }
+      .profile-text {
+        padding-left: 20px; /* Add some space between the image and the text */
       }
       details:hover {
         cursor: pointer;
@@ -60,21 +66,23 @@
   </head>
   <body>
     <div class="container">
-      <header>
-        <img
-          src="images/trevor_clarke.jpg"
-          alt="Trevor Clarke"
-          class="profile-image"
-        />
-        <h2>Hey there! 👋</h2>
-      </header>
+      <section>
+        <header class="profile-section">
+          <img
+            src="images/trevor_clarke.jpg"
+            alt="Trevor Clarke"
+            class="profile-image"
+          />
+          <div class="profile-text">
+            <h2>Hey there! 👋</h2>
+            <p>
+              I'm <strong>Trevor Clarke</strong>, an ever-curious human. I live
+              downtown Toronto with my corgi, Goose.
+            </p>
+          </div>
+        </header>
+      </section>
       <main>
-        <section>
-          <p>
-            I'm <strong>Trevor Clarke</strong>, an ever-curious human. I live
-            downtown Toronto with my corgi, Goose.
-          </p>
-        </section>
         <section>
           <b>Career</b>
           <p>
@@ -99,24 +107,23 @@
               <summary><i>Click to see a timeline</i></summary>
               <figure>
                 <pre class="mermaid">
-                        gantt
-                            dateFormat  YYYY-MM-DD
-                            title Trevor's Career (so far)
-                            section Shopify
-                            Developer (SFR) :a1, 2023-09-01, 2024-02-09
-                            Internship (SFR)   :after a1, 2022-01-01, 2023-05-31
-                            Internship (SFN) :2021-05-01, 2021-12-31
+                    gantt
+                        dateFormat  YYYY-MM-DD
+                        title Trevor's Career (so far)
+                        section Shopify
+                        Developer (SFR) :a1, 2023-09-01, 2024-02-09
+                        Internship (SFR)   :after a1, 2022-01-01, 2023-05-31
+                        Internship (SFN) :2021-05-01, 2021-12-31
 
-                            section BMO
-                            Internship   :2020-09-01, 2021-04-30
+                        section BMO
+                        Internship   :2020-09-01, 2021-04-30
 
-                            section BeeHome
-                            Internship    :2020-01-01, 2020-08-31
+                        section BeeHome
+                        Internship    :2020-01-01, 2020-08-31
 
-                            section School
-                            Education :2018-01-01, 2023-05-31
-                    </pre
-                >
+                        section School
+                        Education :2018-01-01, 2023-05-31
+                </pre>
                 <figcaption>
                   SFR = Storefront Renderer, SFN = Shopify Fulfillment Network
                 </figcaption>
