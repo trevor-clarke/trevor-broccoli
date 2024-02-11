@@ -2,9 +2,9 @@
   section {
     margin-bottom: 20px;
     padding: 5px;
-    font-size: 0.9em;
+    font-size: 1em;
   }
-  section h2 {
+  section h4 {
     font-size: 1em;
   }
   .section-hr {
@@ -18,7 +18,7 @@
 </style>
 
 <section class="content-section">
-  <h2>{{ title }}</h2>
+  <h4>{{ title }}</h2>
   <p>{{ body }}</p>
 </section>
 
