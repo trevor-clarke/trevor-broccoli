@@ -4,90 +4,21 @@ import os
 TTL_FILE_EXTENSION = ".ttl"
 
 
-# test = """
-# section [
-#     title {
-#         Outer section title
-#     }
-#     body{
-#         section [
-#             title {
-#                 Inner section title
-#             }
-#             body{
-#                 Inner Body
-#             }
-#         ]
-#     }
-# ]
-# """
-
-
-test = """
-section [
-    title {
-        Outer section title
-    }
-    body{
-        section [
-            title {
-                Inner section title
-            }
-            body{
-               section [
-                    title {
-                        Inner section title
-                    }
-                    body{
-                        Inner Body
-                    }
-                ]
-            }
-        ]
-    }
-]
-section [
-                    title {
-                        Section on its own
-                    }
-                    body{
-                        Inner Body of section on its own
-                    }
-                ]
-    red [
-        body {
-            This is a red box
-        }
-    ]
-"""
-
-
 def parser(content):
     buffer = ""
     root = ("root", [])
     stack = [root]
 
     for char in content:
-        buffer = buffer.strip()
-        if char == "[":
-            # print("Entering: ", buffer)
-            new = (buffer, [])
+        if char in ["[", "{"]:
+            new = (buffer.strip(), [])
             buffer = ""
             stack[-1][1].append(new)
             stack.append(new)
-        elif char == "]":
-            # print("Exiting:  ", buffer)
-            stack.pop()
-        elif char == "{":
-            # print("Entering: ", buffer)
-            new = (buffer, [])
-            buffer = ""
-            stack[-1][1].append(new)
-            stack.append(new)
-        elif char == "}":
-            # print("Exiting:  ", buffer)
-            stack[-1][1].append(buffer)
-            buffer = ""
+        elif char in ["]", "}"]:
+            if buffer.strip():
+                stack[-1][1].append(buffer.strip())
+                buffer = ""
             stack.pop()
         else:
             buffer += char
@@ -97,9 +28,9 @@ def parser(content):
 
 def print_tree(tree, level=0):
     if isinstance(tree, str):
-        print("  " * level, tree)
+        print("  " * level + tree)
     else:
-        print("  " * level, tree[0])
+        print("  " * level + tree[0])
         for child in tree[1]:
             print_tree(child, level + 1)
 
@@ -109,54 +40,115 @@ class Renderer:
         self.template_directory = template_directory
         self.tree = tree
         self.templates = self.load_template()
+        self.template_names = list(self.templates.keys()) + ["root"]
+
+        self.used_templates = set()
+
+    def separate_html_and_css(self, template_content):
+        # Regular expression to find style content
+        css_pattern = re.compile(r"<style>(.*?)</style>", re.DOTALL)
+        # Extract CSS
+        css = css_pattern.findall(template_content)
+        # Join all CSS parts if there are multiple style tags (unlikely in this case, but just to cover all bases)
+        css = "\n".join(css)
+        # Remove the style element from the template content to get HTML
+        html = re.sub(css_pattern, "", template_content)
+        return html.strip(), css.strip() + "\n\n"
+
+    def generate_css(self):
+        css = ""
+        for template_name in self.used_templates:
+            css += self.templates[template_name]["css"]
+        return f"{css}\n"
 
     def load_template(self):
         templates = {}
         for file in os.listdir(self.template_directory):
             if file.endswith(TTL_FILE_EXTENSION):
                 name = file.split(".")[0]
-                with open(self.template_directory + "/" + file, "r") as f:
-                    templates[name] = f.read()
+                with open(os.path.join(self.template_directory, file), "r") as f:
+                    template_content = f.read()
+
+                template_html, template_css = self.separate_html_and_css(
+                    template_content
+                )
+
+                templates[name] = {
+                    "html": template_html,
+                    "css": template_css,
+                }
         return templates
 
     def render_template(self, key, properties):
-        template_copy = self.templates[key]
-        for key, value in properties.items():
-            pattern = re.compile(r"\{\{\s*" + re.escape(key) + r"\s*\}\}")
+        if key not in self.template_names:
+            raise ValueError(f"Template {key} not found")
+
+        required_properties = re.findall(
+            r"\{\{\s*(\w+)\s*\}\}", self.templates[key]["html"]
+        )
+        handled_properties = {}
+        for prop in properties:
+            if prop[0] not in required_properties:
+                raise ValueError(f"Property {prop[0]} not found in template {key}")
+            handled_properties[prop[0]] = prop[1]
+
+        for prop in required_properties:
+            if prop not in handled_properties:
+                raise ValueError(f"Property {prop} not found in properties")
+
+        for property, values in handled_properties.items():
+            if len(values) == 1 and isinstance(values[0], str):
+                handled_properties[property] = values[0]
+            else:
+                html = "".join(
+                    [
+                        self.render_tree(value) if isinstance(value, tuple) else value
+                        for value in values
+                    ]
+                )
+                handled_properties[property] = html
+
+        template_copy = self.templates[key]["html"]
+        for prop, value in handled_properties.items():
+            pattern = re.compile(r"\{\{\s*" + re.escape(prop) + r"\s*\}\}")
             template_copy = pattern.sub(value, template_copy)
+        print("adding template", key, "to used templates")
+        self.used_templates.add(key)
         return template_copy
 
-    def recurse(self, tree):
+    def render_tree(self, tree):
+        left, right = tree
+        return self.render_template(left, right)
 
-        component = tree[0]
-        children = tree[1]
+    def render_document(self, tree):
+        body = "".join([self.render_tree(child) for child in tree[1]])
+        indented_body = "\n".join([f"\t{line}" for line in body.splitlines()])
+        css = self.generate_css()
+        indented_css = "\n".join([f"\t{line}" for line in css.splitlines()])
 
-        properties = {}
-        for child in children:
-            # child at this point should be a tuple
-            child_key = child[0]
-            child_value = child[1][0]
+        result = "<!DOCTYPE html>\n"
+        result += "<html>\n"
+        result += "<head>\n"
+        result += "<style>\n"
+        result += indented_css + "\n"
+        result += "</style>\n"
+        result += "</head>\n"
+        result += "<body>\n"
+        result += indented_body + "\n"
+        result += "</body>\n"
+        result += "<!-- File Generated by Trevor's Templating Language -->\n"
+        return result
 
-            if isinstance(child_value, str):
-                properties[child_key] = child_value
-            else:
-                properties[child_key] = self.recurse(child_value)
 
-        return self.render_template(component, properties)
-
-    def generate_html(self, tree):
-        html = ""
-        for child in tree[1]:
-            html += self.recurse(child)
-        return html
-
+with open("index.ttl", "r") as f:
+    test = f.read()
 
 tree = parser(test)
-# print(tree)
-# html = generate_html(tree)
-# print(html)
+print(tree)  # Print the tree structure once
 
 renderer = Renderer("templates", tree)
-print("Okay:", renderer.generate_html(tree))
 
-# print_tree(parser(test))
+with open("index2.html", "w") as f:
+    f.write(renderer.render_document(tree))
+
+print_tree(tree)  # Prints the one tree as requested

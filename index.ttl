@@ -1,20 +1,60 @@
-section [
-    title {
-        test
-    }
-
+container [
     body {
-        whatever
-    }
-]
-
-section [
-
-    title {
-        hobbies
-    }
-
-    body {
-        a,b,c
+        section [
+            title {
+                Hey there! 👋
+            }
+            body {
+                I'm Trevor Clarke, an ever-curious human. I live downtown Toronto with my corgi, Goose.
+            }
+        ]
+        section [
+            title {
+                Career
+            }
+            body {
+                I work at Shopify as a Software Developer, contributing to Storefront Renderer. So far, I've experienced 5 years of school, 6 internships, and countless amazing people. Click to see a timeline: Trevor's Career (so far), including positions at Shopify, BMO, BeeHome, and education timeline.
+            }
+        ]
+        section [
+            title {
+                Socials
+            }
+            body {
+                GitHub, LinkedIn, Instagram, Instagram (private), Snapchat, YouTube
+            }
+        ]
+        section [
+            title {
+                Domains
+            }
+            body {
+                Honestly, I have no excuses: trevorclarke.ca, trevorc.ca, mynameistrevorclarkethisismywebsite.ca, mynameistrevorclarke.thisismywebsite.ca, b6.tel ... there are more.
+            }
+        ]
+        section [
+            title {
+                Hobbies & Interests
+            }
+            body {
+                3D Printing, Photography, Locks (legally ofc), Sewing & Knitting, Dog Care, Reading, Programming Challenges, Video Content Creation, Volunteering
+            }
+        ]
+        section [
+            title {
+                Projects & Contributions
+            }
+            body {
+                10k digits of pi on a table, Refurbished silver ring company, Got a corgi, Controlled receipt printer via JavaScript, Airplane doggo carrier, 3D-printed analog-style temp display, Built a faster 3D printer, AI-generated profile images, Changed winter tires myself, Created SketchThis.com, and more.
+            }
+        ]
+        section [
+            title {
+                Future Ideas
+            }
+            body {
+                Wordle tool for best start word, Profile photo from 1km, Google Ads vs dating apps, Auto buzzer response app
+            }
+        ]
     }
 ]

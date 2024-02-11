@@ -1,11 +1,12 @@
 <style>
   section {
     margin-bottom: 40px;
-    border-bottom: 1px solid #ddd;
+    border: 1px solid #ddd;
+    padding: 5px;
   }
 </style>
 
 <section class="content-section">
-  <h2>{{title}}</h2>
-  <p>{{body}}</p>
+  <h2>{{ title }}</h2>
+  <p>{{ body }}</p>
 </section>
