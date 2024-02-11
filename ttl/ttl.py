@@ -1,6 +1,6 @@
 from ttl_parser import TTLParser
 from ttl_renderer import TTLRenderer
-import os
+
 
 parser = TTLParser()
 renderer = TTLRenderer("templates")
