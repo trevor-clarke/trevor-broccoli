@@ -1,11 +1,20 @@
 container [
     body {
         section [
-            title {
-                Hey there! 👋
-            }
+            title {}
             body {
-                I'm Trevor Clarke, an ever-curious human. I live downtown Toronto with my corgi, Goose.
+                header[
+                    title {
+                        Hey there! 👋
+                    }
+                    body {
+                        I'm <strong>Trevor Clarke</strong>, an ever-curious human. I live
+                        downtown Toronto with my corgi, Goose.
+                    }
+                    image_url {
+                        images/trevor_clarke.jpg
+                    }
+                ]
             }
         ]
         section [

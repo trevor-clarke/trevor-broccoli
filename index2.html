@@ -2,11 +2,7 @@
 <html>
 <head>
 <style>
-	section {
-	    margin-bottom: 40px;
-	    border: 1px solid #ddd;
-	    padding: 5px;
-	  }.container {
+	.container {
 	        padding: 20px;
 	        max-width: 800px;
 	        margin: auto;
@@ -17,14 +13,41 @@
 	        .container {
 	          padding: 10px;
 	        }
+	      }.profile-section {
+	        display: flex;
+	        align-items: center;
 	      }
+	      .profile-image {
+	        width: 100px;
+	        height: 100px;
+	        border-radius: 50%;
+	        display: block;
+	      }
+	      .profile-text {
+	        padding-left: 20px; /* Add some space between the image and the text */
+	      }section {
+	    margin-bottom: 40px;
+	    border: 1px solid #ddd;
+	    padding: 5px;
+	  }
 </style>
 </head>
 <body>
 	<div class="container">
 	  <p><section class="content-section">
-	  <h2>Hey there! 👋</h2>
-	  <p>I'm Trevor Clarke, an ever-curious human. I live downtown Toronto with my corgi, Goose.</p>
+	  <h2></h2>
+	  <p><header class="profile-section">
+	    <img
+	    src="images/trevor_clarke.jpg"
+	    alt="Trevor Clarke"
+	    class="profile-image"
+	    />
+	    <div class="profile-text">
+	    <h2>Hey there! 👋</h2>
+	    <p>I'm <strong>Trevor Clarke</strong>, an ever-curious human. I live
+	                        downtown Toronto with my corgi, Goose.</p>
+	    </div>
+	</header></p>
 	</section><section class="content-section">
 	  <h2>Career</h2>
 	  <p>I work at Shopify as a Software Developer, contributing to Storefront Renderer. So far, I've experienced 5 years of school, 6 internships, and countless amazing people. Click to see a timeline: Trevor's Career (so far), including positions at Shopify, BMO, BeeHome, and education timeline.</p>
