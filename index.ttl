@@ -1,0 +1,20 @@
+section [
+    title {
+        test
+    }
+
+    body {
+        whatever
+    }
+]
+
+section [
+
+    title {
+        hobbies
+    }
+
+    body {
+        a,b,c
+    }
+]

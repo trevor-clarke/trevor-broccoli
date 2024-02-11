@@ -1,0 +1,9 @@
+<style>
+  .red-box {
+    border: 3px solid red;
+  }
+</style>
+
+<div class="red-box">
+  <p>{{body}}</p>
+</div>
