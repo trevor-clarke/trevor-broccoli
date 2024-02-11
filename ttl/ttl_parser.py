@@ -8,16 +8,21 @@ class TTLParser:
         self.buffer = ""
         self.root = ("root", [])
         self.stack = [self.root]
+        self.single_line = False
 
     def parse(self, content):
         self.reset()
         for char in content:
-            if char in ["[", "{"]:
+            if char in ["[", "{", ":"]:
+                if char == ":":
+                    self.single_line = True
                 new_node = (self.buffer.strip(), [])
                 self.buffer = ""
                 self.stack[-1][1].append(new_node)
                 self.stack.append(new_node)
-            elif char in ["]", "}"]:
+            elif char in ["]", "}"] or (char == "\n" and self.single_line):
+                if char == "\n":
+                    self.single_line = False
                 if self.buffer.strip():
                     self.stack[-1][1].append(self.buffer.strip())
                     self.buffer = ""
