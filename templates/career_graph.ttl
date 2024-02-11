@@ -1,0 +1,41 @@
+<style>
+      details:hover {
+        cursor: pointer;
+      }
+      details > summary {
+        list-style: none;
+      }
+      details > summary::-webkit-details-marker {
+        display: none;
+      }
+</style>
+<details>
+    <summary><i>Click to see a timeline</i></summary>
+    <figure>
+    <pre class="mermaid">
+        gantt
+            dateFormat  YYYY-MM-DD
+            title Trevor's Career (so far)
+            section Shopify
+            Developer (SFR) :a1, 2023-09-01, 2024-02-09
+            Internship (SFR)   :after a1, 2022-01-01, 2023-05-31
+            Internship (SFN) :2021-05-01, 2021-12-31
+
+            section BMO
+            Internship   :2020-09-01, 2021-04-30
+
+            section BeeHome
+            Internship    :2020-01-01, 2020-08-31
+
+            section School
+            Education :2018-01-01, 2023-05-31
+    </pre>
+    <figcaption>
+        SFR = Storefront Renderer, SFN = Shopify Fulfillment Network
+    </figcaption>
+    </figure>
+        <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"
+    ></script>
+</details>

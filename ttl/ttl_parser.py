@@ -30,8 +30,9 @@ class TTLParser:
         if tree is None:
             tree = self.root
         if isinstance(tree, str):
-            print("  " * level + tree)
+            shortened = tree[:20].strip() + "..." if len(tree) > 20 else tree
+            print("  " * level + shortened)
         else:
-            print("  " * level + tree[0])
+            print(f"{'  ' * level}[{tree[0]}]")
             for child in tree[1]:
                 self.print_tree(child, level + 1)

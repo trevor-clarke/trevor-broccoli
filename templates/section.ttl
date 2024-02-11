@@ -1,8 +1,19 @@
 <style>
   section {
-    margin-bottom: 40px;
-    border: 1px solid #ddd;
+    margin-bottom: 20px;
     padding: 5px;
+    font-size: 0.9em;
+  }
+  section h2 {
+    font-size: 1em;
+  }
+  .section-hr {
+    border-top: 1px solid #ddd;
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: black;
   }
 </style>
 
@@ -10,3 +21,5 @@
   <h2>{{ title }}</h2>
   <p>{{ body }}</p>
 </section>
+
+<hr class="section-hr" />
