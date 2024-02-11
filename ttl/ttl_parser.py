@@ -20,8 +20,8 @@ class TTLParser:
                 self.buffer = ""
                 self.stack[-1][1].append(new_node)
                 self.stack.append(new_node)
-            elif char in ["]", "}"] or (char == "\n" and self.single_line):
-                if char == "\n":
+            elif char in ["]", "}"] or (char in ["\n", ";"] and self.single_line):
+                if char in ["\n", ";"]:
                     self.single_line = False
                 if self.buffer.strip():
                     self.stack[-1][1].append(self.buffer.strip())
