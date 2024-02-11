@@ -1,17 +1,17 @@
 <style>
-      details:hover {
-        cursor: pointer;
-      }
-      details > summary {
-        list-style: none;
-      }
-      details > summary::-webkit-details-marker {
-        display: none;
-      }
+  details:hover {
+    cursor: pointer;
+  }
+  details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
 </style>
 <details>
-    <summary><i>Click to see a timeline</i></summary>
-    <figure>
+  <summary><i>Click to see a timeline</i></summary>
+  <figure>
     <pre class="mermaid">
         gantt
             dateFormat  YYYY-MM-DD
@@ -31,11 +31,11 @@
             Education :2018-01-01, 2023-05-31
     </pre>
     <figcaption>
-        SFR = Storefront Renderer, SFN = Shopify Fulfillment Network
+      SFR = Storefront Renderer, SFN = Shopify Fulfillment Network
     </figcaption>
-    </figure>
-        <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"
-    ></script>
+  </figure>
+  <script
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"
+  ></script>
 </details>

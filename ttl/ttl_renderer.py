@@ -5,9 +5,8 @@ TTL_FILE_EXTENSION = ".ttl"
 
 
 class TTLRenderer:
-    def __init__(self, template_directory, tree):
+    def __init__(self, template_directory):
         self.template_directory = template_directory
-        self.tree = tree
         self.templates = self.load_template()
         self.template_names = list(self.templates.keys()) + ["root"]
 
