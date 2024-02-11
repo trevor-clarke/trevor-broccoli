@@ -10,17 +10,17 @@
         display: block;
       }
       .profile-text {
-        padding-left: 20px; /* Add some space between the image and the text */
+        padding-right: 20px; /* Add some space between the image and the text */
       }
 </style>
 <header class="profile-section">
+    <div class="profile-text">
+    <h2>{{title}}</h2>
+    <p>{{body}}</p>
+    </div>
     <img
     src="{{image_url}}"
     alt="Trevor Clarke"
     class="profile-image"
     />
-    <div class="profile-text">
-    <h2>{{title}}</h2>
-    <p>{{body}}</p>
-    </div>
 </header>
