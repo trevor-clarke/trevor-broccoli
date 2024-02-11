@@ -10,11 +10,7 @@ This repository contains the source code for my personal site, structured in TTL
 
 ## Project Structure
 
-- `src/`: Contains the TTL files that define the structure and content of my website.
-- `parser/`: Houses the custom Parser class responsible for interpreting TTL files and generating an intermediate representation.
-- `renderer/`: Contains the Renderer module, which converts the intermediate representation into HTML files.
-- `actions/`: Defines the GitHub Actions workflows that automate the parsing and rendering process.
-- `public/`: The output directory where the rendered HTML files are placed. (This directory might be in a separate branch or repository, depending on the deployment strategy.)
+Coming soon.
 
 ## Workflow
 
