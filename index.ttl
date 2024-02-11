@@ -1,14 +1,19 @@
 container [
     body {
+
         section [
             title: 
             body {
                 header [
-                    title: Hey there! 👋
+                    title: Trevor Clarke
                     image_url: images/trevor_clarke.jpg
-                    body: I'm <strong>Trevor Clarke</strong>, an ever-curious human. I live downtown Toronto with my corgi, Goose.
+                    body: 
                 ]
             }
+        ]
+         section [
+            title: formatted: code {print("Hello, World! 👋")}}
+            body: I'm <strong>Trevor Clarke</strong>, an ever-curious human. I live downtown Toronto with my corgi, Goose.
         ]
         section [
             title: Career
