@@ -1,6 +1,5 @@
 container [
     body {
-
         section [
             title: 
             body {
@@ -11,7 +10,7 @@ container [
                 ]
             }
         ]
-         section [
+        section [
             title: formatted: code {print("Hello, World! 👋")}}
             body: I'm <strong>Trevor Clarke</strong>, an ever-curious human. I live downtown Toronto with my corgi, Goose.
         ]
