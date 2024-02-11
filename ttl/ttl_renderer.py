@@ -96,6 +96,10 @@ class TTLRenderer:
         result = "<!DOCTYPE html>\n"
         result += "<html>\n"
         result += "<head>\n"
+        result += "<meta charset='UTF-8' />\n"
+        result += (
+            "<meta name='viewport' content='width=device-width, initial-scale=1.0' />\n"
+        )
         result += "<style>\n"
         result += indented_css + "\n"
         result += "</style>\n"
