@@ -12,11 +12,13 @@ container [
         ]
         section [
             title: formatted: code {print("Hello, World! 👋")}}
-            body: I'm <strong>Trevor Clarke</strong>, an ever-curious human. I live downtown Toronto with my corgi, Goose.
+            body: I'm <strong>Trevor Clarke</strong>, an ever-curious human.
         ]
         section [
             title: Career
             body: trevor_clarke_bio[]
+            link: /career.html
+            link_text:  Read more.
         ]
         section [
             title: Socials

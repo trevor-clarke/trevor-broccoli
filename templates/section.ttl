@@ -15,11 +15,15 @@
   a {
     color: black;
   }
+
+  .link {
+    color: #aaa !important;
+  }
 </style>
 
 <section class="content-section">
   <h4>{{ title }}</h2>
-  <p>{{ body }}</p>
+  <p>{{ body }} <i><a class="link" href="{{link}}">{{link_text}}</a></i></p>
 </section>
 
 <hr class="section-hr" />
