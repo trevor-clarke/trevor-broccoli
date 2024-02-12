@@ -15,6 +15,36 @@
 	    flex: 0 0 auto; /* Adjust this percentage to change the number of columns */
 	    margin: 5px;
 	    padding: 0;
+	    box-sizing: border-box; /* Ensures padding and border are included in the total width */
+	  }
+	
+	  .project-span {
+	    display: block; /* Makes the span fill the flex-item */
+	    background-color: #eee;
+	    padding: 5px;
+	    text-align: center; /* Centers the text within the span */
+	  }.container {
+	        padding: 20px;
+	        max-width: 800px;
+	        margin: auto;
+	        font-family: Arial, sans-serif;
+	
+	      }
+	      @media (max-width: 768px) {
+	        .container {
+	          padding: 10px;
+	        }
+	      }.flex-container {
+	    display: flex;
+	    flex-wrap: wrap;
+	    padding: 0;
+	    margin: 0;
+	    list-style: none;
+	  }
+	  .flex-item {
+	    flex: 0 0 auto; /* Adjust this percentage to change the number of columns */
+	    margin: 5px;
+	    padding: 0;
 	    box-sizing: border-box; 
 	  }
 	
@@ -30,7 +60,19 @@
 	  }pre{
 	        border: 0px !important;
 	        font-size: 1.1em !important;
-	    }section {
+	    }.profile-section {
+	    display: flex;
+	    align-items: center;
+	  }
+	  .profile-image {
+	    width: 100px;
+	    height: 100px;
+	    border-radius: 50%;
+	    display: block;
+	  }
+	  .profile-text {
+	    padding-right: 20px; /* Add some space between the image and the text */
+	  }section {
 	    margin-bottom: 20px;
 	    padding: 5px;
 	    font-size: 1em;
@@ -61,49 +103,7 @@
 	  }
 	  .profile-text {
 	    padding-right: 20px; /* Add some space between the image and the text */
-	  }.flex-container {
-	    display: flex;
-	    flex-wrap: wrap;
-	    padding: 0;
-	    margin: 0;
-	    list-style: none;
 	  }
-	  .flex-item {
-	    flex: 0 0 auto; /* Adjust this percentage to change the number of columns */
-	    margin: 5px;
-	    padding: 0;
-	    box-sizing: border-box; /* Ensures padding and border are included in the total width */
-	  }
-	
-	  .project-span {
-	    display: block; /* Makes the span fill the flex-item */
-	    background-color: #eee;
-	    padding: 5px;
-	    text-align: center; /* Centers the text within the span */
-	  }.profile-section {
-	    display: flex;
-	    align-items: center;
-	  }
-	  .profile-image {
-	    width: 100px;
-	    height: 100px;
-	    border-radius: 50%;
-	    display: block;
-	  }
-	  .profile-text {
-	    padding-right: 20px; /* Add some space between the image and the text */
-	  }.container {
-	        padding: 20px;
-	        max-width: 800px;
-	        margin: auto;
-	        font-family: Arial, sans-serif;
-	
-	      }
-	      @media (max-width: 768px) {
-	        .container {
-	          padding: 10px;
-	        }
-	      }
 </style>
 </head>
 <body>

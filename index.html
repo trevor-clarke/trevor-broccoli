@@ -15,6 +15,36 @@
 	    flex: 0 0 auto; /* Adjust this percentage to change the number of columns */
 	    margin: 5px;
 	    padding: 0;
+	    box-sizing: border-box; /* Ensures padding and border are included in the total width */
+	  }
+	
+	  .project-span {
+	    display: block; /* Makes the span fill the flex-item */
+	    background-color: #eee;
+	    padding: 5px;
+	    text-align: center; /* Centers the text within the span */
+	  }.container {
+	        padding: 20px;
+	        max-width: 800px;
+	        margin: auto;
+	        font-family: Arial, sans-serif;
+	
+	      }
+	      @media (max-width: 768px) {
+	        .container {
+	          padding: 10px;
+	        }
+	      }.flex-container {
+	    display: flex;
+	    flex-wrap: wrap;
+	    padding: 0;
+	    margin: 0;
+	    list-style: none;
+	  }
+	  .flex-item {
+	    flex: 0 0 auto; /* Adjust this percentage to change the number of columns */
+	    margin: 5px;
+	    padding: 0;
 	    box-sizing: border-box; 
 	  }
 	
@@ -49,25 +79,6 @@
 	
 	  .link {
 	    color: #aaa !important;
-	  }.flex-container {
-	    display: flex;
-	    flex-wrap: wrap;
-	    padding: 0;
-	    margin: 0;
-	    list-style: none;
-	  }
-	  .flex-item {
-	    flex: 0 0 auto; /* Adjust this percentage to change the number of columns */
-	    margin: 5px;
-	    padding: 0;
-	    box-sizing: border-box; /* Ensures padding and border are included in the total width */
-	  }
-	
-	  .project-span {
-	    display: block; /* Makes the span fill the flex-item */
-	    background-color: #eee;
-	    padding: 5px;
-	    text-align: center; /* Centers the text within the span */
 	  }.profile-section {
 	    display: flex;
 	    align-items: center;
@@ -80,18 +91,7 @@
 	  }
 	  .profile-text {
 	    padding-right: 20px; /* Add some space between the image and the text */
-	  }.container {
-	        padding: 20px;
-	        max-width: 800px;
-	        margin: auto;
-	        font-family: Arial, sans-serif;
-	
-	      }
-	      @media (max-width: 768px) {
-	        .container {
-	          padding: 10px;
-	        }
-	      }
+	  }
 </style>
 </head>
 <body>
@@ -122,7 +122,6 @@
 	    <div class="flex-item"><span class="project-span">📸 Photography</span></div>
 	    <div class="flex-item"><span class="project-span">🔓 Locks (legally ofc)</span></div>
 	    <div class="flex-item"><span class="project-span">🧵 Sewing & Knitting</span></div>
-	    <div class="flex-item"><span class="project-span">🐕 Dog Care</span></div>
 	    <div class="flex-item"><span class="project-span">📚 Reading</span></div>
 	    <div class="flex-item"><span class="project-span">💻 Programming Challenges</span></div>
 	    <div class="flex-item"><span class="project-span">🎥 Video Content Creation</span></div>
@@ -146,7 +145,7 @@
 	  rel="noopener noreferrer"
 	  >Storefront Renderer</a
 	>. </p>
-	  <i><a class="link" href="/career.html">see more</a></i>
+	  <i><a class="link" href="/career">see more</a></i>
 	</section>
 	
 	<hr class="section-hr" /><section class="content-section">
