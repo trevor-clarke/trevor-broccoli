@@ -5,9 +5,10 @@ container [
             body {
                 header [
                     title: Trevor Clarke
-                    image_url: images/trevor_clarke.jpg
+                    video_url: images/trevor_clarke.mp4
                     body: 
                 ]
+
             }
         ]
         section [

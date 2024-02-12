@@ -12,11 +12,39 @@
   .profile-text {
     padding-right: 20px; /* Add some space between the image and the text */
   }
+
+    .video-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .video-section::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+  }
+  .rounded-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 </style>
 <header class="profile-section">
   <div class="profile-text">
     <h2>{{ title }}</h2>
     <p>{{ body }}</p>
   </div>
-  <img src="{{ image_url }}" alt="Trevor Clarke" class="profile-image" />
+  <div class="video-section">
+    <video class="rounded-video" src="{{ video_url }}" autoplay loop muted></video>
+  </div>
 </header>
