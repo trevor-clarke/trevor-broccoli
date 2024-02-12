@@ -21,7 +21,7 @@ container [
         section [
             title: Career
             body: trevor_clarke_bio[]
-            link: /career.html
+            link: /career
             link_text:  see more
         ]
         section [

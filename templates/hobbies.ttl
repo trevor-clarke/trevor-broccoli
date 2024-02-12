@@ -30,7 +30,6 @@
     <div class="flex-item"><span class="project-span">📸 Photography</span></div>
     <div class="flex-item"><span class="project-span">🔓 Locks (legally ofc)</span></div>
     <div class="flex-item"><span class="project-span">🧵 Sewing & Knitting</span></div>
-    <div class="flex-item"><span class="project-span">🐕 Dog Care</span></div>
     <div class="flex-item"><span class="project-span">📚 Reading</span></div>
     <div class="flex-item"><span class="project-span">💻 Programming Challenges</span></div>
     <div class="flex-item"><span class="project-span">🎥 Video Content Creation</span></div>
