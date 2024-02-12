@@ -4,7 +4,71 @@
 <meta charset='UTF-8' />
 <meta name='viewport' content='width=device-width, initial-scale=1.0' />
 <style>
-	.profile-section {
+	.flex-container {
+	    display: flex;
+	    flex-wrap: wrap;
+	    padding: 0;
+	    margin: 0;
+	    list-style: none;
+	  }
+	  .flex-item {
+	    flex: 0 0 auto; /* Adjust this percentage to change the number of columns */
+	    margin: 5px;
+	    padding: 0;
+	    box-sizing: border-box; 
+	  }
+	
+	  .project-span {
+	    display: block; 
+	    background-color: #efefef;
+	    padding-top: 7px;
+	    padding-bottom: 7px;
+	    padding-left: 15px;
+	    padding-right: 15px;
+	    text-align: center; 
+	    border-radius: 7px;
+	  }pre{
+	        border: 0px !important;
+	        font-size: 1.1em !important;
+	    }section {
+	    margin-bottom: 20px;
+	    padding: 5px;
+	    font-size: 1em;
+	  }
+	  section h4 {
+	    font-size: 1em;
+	  }
+	  .section-hr {
+	    border-top: 1px solid #ddd;
+	    margin-bottom: 20px;
+	  }
+	
+	  a {
+	    color: black;
+	  }
+	
+	  .link {
+	    color: #aaa !important;
+	  }.flex-container {
+	    display: flex;
+	    flex-wrap: wrap;
+	    padding: 0;
+	    margin: 0;
+	    list-style: none;
+	  }
+	  .flex-item {
+	    flex: 0 0 auto; /* Adjust this percentage to change the number of columns */
+	    margin: 5px;
+	    padding: 0;
+	    box-sizing: border-box; /* Ensures padding and border are included in the total width */
+	  }
+	
+	  .project-span {
+	    display: block; /* Makes the span fill the flex-item */
+	    background-color: #eee;
+	    padding: 5px;
+	    text-align: center; /* Centers the text within the span */
+	  }.profile-section {
 	    display: flex;
 	    align-items: center;
 	  }
@@ -27,42 +91,7 @@
 	        .container {
 	          padding: 10px;
 	        }
-	      }.flex-container {
-	    display: flex;
-	    flex-wrap: wrap;
-	    padding: 0;
-	    margin: 0;
-	    list-style: none;
-	  }
-	  .flex-item {
-	    flex: 1 1 175px;
-	    margin: 10px;
-	    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-	    padding: 10px;
-	    background-color: #f9f9f9;
-	  }section {
-	    margin-bottom: 20px;
-	    padding: 5px;
-	    font-size: 1em;
-	  }
-	  section h4 {
-	    font-size: 1em;
-	  }
-	  .section-hr {
-	    border-top: 1px solid #ddd;
-	    margin-bottom: 20px;
-	  }
-	
-	  a {
-	    color: black;
-	  }
-	
-	  .link {
-	    color: #aaa !important;
-	  }pre{
-	        border: 0px !important;
-	        font-size: 1.1em !important;
-	    }
+	      }
 </style>
 </head>
 <body>
@@ -83,6 +112,22 @@
 	  <h4><pre class="prettyprint">print("Hello, World! 👋")</pre>
 	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script></h2>
 	  <p>I'm <strong>Trevor Clarke</strong>, an ever-curious human. </p>
+	  <i><a class="link" href=""></a></i>
+	</section>
+	
+	<hr class="section-hr" /><section class="content-section">
+	  <h4>Hobbies & Interests</h2>
+	  <p><div class="flex-container">
+	    <div class="flex-item"><span class="project-span">🖨️ 3D Printing</span></div>
+	    <div class="flex-item"><span class="project-span">📸 Photography</span></div>
+	    <div class="flex-item"><span class="project-span">🔓 Locks (legally ofc)</span></div>
+	    <div class="flex-item"><span class="project-span">🧵 Sewing & Knitting</span></div>
+	    <div class="flex-item"><span class="project-span">🐕 Dog Care</span></div>
+	    <div class="flex-item"><span class="project-span">📚 Reading</span></div>
+	    <div class="flex-item"><span class="project-span">💻 Programming Challenges</span></div>
+	    <div class="flex-item"><span class="project-span">🎥 Video Content Creation</span></div>
+	    <div class="flex-item"><span class="project-span">🛠️ Volunteering</span></div>
+	</div> </p>
 	  <i><a class="link" href=""></a></i>
 	</section>
 	
@@ -116,25 +161,19 @@
 	</section>
 	
 	<hr class="section-hr" /><section class="content-section">
-	  <h4>Hobbies & Interests</h2>
-	  <p>🖨️ 3D Printing, 📸 Photography, 🔓 Locks (legally ofc), 🧵 Sewing & Knitting, 🐕 Dog Care, 📚 Reading, 💻 Programming Challenges, 🎥 Video Content Creation, 🛠️ Volunteering </p>
-	  <i><a class="link" href=""></a></i>
-	</section>
-	
-	<hr class="section-hr" /><section class="content-section">
 	  <h4>Projects & Contributions</h2>
 	  <p><div class="flex-container">
-	    <div class="flex-item">🥧 10k digits of pi on a table</div>
-	    <div class="flex-item">💍 Refurbished silver ring company</div>
-	    <div class="flex-item">🐕 Got a corgi</div>
-	    <div class="flex-item">🖨️ Controlled receipt printer via JavaScript</div>
-	    <div class="flex-item">✈️ Airplane doggo carrier</div>
-	    <div class="flex-item">🌡️ 3D-printed analog-style temp display</div>
-	    <div class="flex-item">🛠️ Built a faster 3D printer</div>
-	    <div class="flex-item">🤖 AI-generated profile images</div>
-	    <div class="flex-item">🚗 Changed winter tires myself</div>
-	    <div class="flex-item">🎨 Created SketchThis.com</div>
-	  </div> </p>
+	    <div class="flex-item"><span class="project-span">🥧 10k digits of pi on a table</span></div>
+	    <div class="flex-item"><span class="project-span">💍 Refurbished silver ring company</span></div>
+	    <div class="flex-item"><span class="project-span">🐕 Got a corgi</span></div>
+	    <div class="flex-item"><span class="project-span">🖨️ Controlled receipt printer via JavaScript</span></div>
+	    <div class="flex-item"><span class="project-span">✈️ Airplane doggo carrier</span></div>
+	    <div class="flex-item"><span class="project-span">🌡️ 3D-printed analog-style temp display</span></div>
+	    <div class="flex-item"><span class="project-span">🛠️ Built a faster 3D printer</span></div>
+	    <div class="flex-item"><span class="project-span">🤖 AI-generated profile images</span></div>
+	    <div class="flex-item"><span class="project-span">🚗 Changed winter tires myself</span></div>
+	    <div class="flex-item"><span class="project-span">🎨 Created SketchThis.com</span></div>
+	</div> </p>
 	  <i><a class="link" href=""></a></i>
 	</section>
 	

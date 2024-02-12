@@ -4,7 +4,83 @@
 <meta charset='UTF-8' />
 <meta name='viewport' content='width=device-width, initial-scale=1.0' />
 <style>
-	.profile-section {
+	.flex-container {
+	    display: flex;
+	    flex-wrap: wrap;
+	    padding: 0;
+	    margin: 0;
+	    list-style: none;
+	  }
+	  .flex-item {
+	    flex: 0 0 auto; /* Adjust this percentage to change the number of columns */
+	    margin: 5px;
+	    padding: 0;
+	    box-sizing: border-box; 
+	  }
+	
+	  .project-span {
+	    display: block; 
+	    background-color: #efefef;
+	    padding-top: 7px;
+	    padding-bottom: 7px;
+	    padding-left: 15px;
+	    padding-right: 15px;
+	    text-align: center; 
+	    border-radius: 7px;
+	  }pre{
+	        border: 0px !important;
+	        font-size: 1.1em !important;
+	    }section {
+	    margin-bottom: 20px;
+	    padding: 5px;
+	    font-size: 1em;
+	  }
+	  section h4 {
+	    font-size: 1em;
+	  }
+	  .section-hr {
+	    border-top: 1px solid #ddd;
+	    margin-bottom: 20px;
+	  }
+	
+	  a {
+	    color: black;
+	  }
+	
+	  .link {
+	    color: #aaa !important;
+	  }.profile-section {
+	    display: flex;
+	    align-items: center;
+	  }
+	  .profile-image {
+	    width: 100px;
+	    height: 100px;
+	    border-radius: 50%;
+	    display: block;
+	  }
+	  .profile-text {
+	    padding-right: 20px; /* Add some space between the image and the text */
+	  }.flex-container {
+	    display: flex;
+	    flex-wrap: wrap;
+	    padding: 0;
+	    margin: 0;
+	    list-style: none;
+	  }
+	  .flex-item {
+	    flex: 0 0 auto; /* Adjust this percentage to change the number of columns */
+	    margin: 5px;
+	    padding: 0;
+	    box-sizing: border-box; /* Ensures padding and border are included in the total width */
+	  }
+	
+	  .project-span {
+	    display: block; /* Makes the span fill the flex-item */
+	    background-color: #eee;
+	    padding: 5px;
+	    text-align: center; /* Centers the text within the span */
+	  }.profile-section {
 	    display: flex;
 	    align-items: center;
 	  }
@@ -27,54 +103,7 @@
 	        .container {
 	          padding: 10px;
 	        }
-	      }.profile-section {
-	    display: flex;
-	    align-items: center;
-	  }
-	  .profile-image {
-	    width: 100px;
-	    height: 100px;
-	    border-radius: 50%;
-	    display: block;
-	  }
-	  .profile-text {
-	    padding-right: 20px; /* Add some space between the image and the text */
-	  }.flex-container {
-	    display: flex;
-	    flex-wrap: wrap;
-	    padding: 0;
-	    margin: 0;
-	    list-style: none;
-	  }
-	  .flex-item {
-	    flex: 1 1 175px;
-	    margin: 10px;
-	    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-	    padding: 10px;
-	    background-color: #f9f9f9;
-	  }section {
-	    margin-bottom: 20px;
-	    padding: 5px;
-	    font-size: 1em;
-	  }
-	  section h4 {
-	    font-size: 1em;
-	  }
-	  .section-hr {
-	    border-top: 1px solid #ddd;
-	    margin-bottom: 20px;
-	  }
-	
-	  a {
-	    color: black;
-	  }
-	
-	  .link {
-	    color: #aaa !important;
-	  }pre{
-	        border: 0px !important;
-	        font-size: 1.1em !important;
-	    }
+	      }
 </style>
 </head>
 <body>

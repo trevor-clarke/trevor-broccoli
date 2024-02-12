@@ -15,6 +15,10 @@ container [
             body: I'm <strong>Trevor Clarke</strong>, an ever-curious human.
         ]
         section [
+            title: Hobbies & Interests
+            body: hobbies[]
+        ]
+        section [
             title: Career
             body: trevor_clarke_bio[]
             link: /career.html
@@ -24,10 +28,7 @@ container [
             title: Socials
             body: social_links[]
         ]
-        section [
-            title: Hobbies & Interests
-            body: 🖨️ 3D Printing, 📸 Photography, 🔓 Locks (legally ofc), 🧵 Sewing & Knitting, 🐕 Dog Care, 📚 Reading, 💻 Programming Challenges, 🎥 Video Content Creation, 🛠️ Volunteering
-        ]
+
         section [
             title: Projects & Contributions
             body: projects[]

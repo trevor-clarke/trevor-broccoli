@@ -1,0 +1,38 @@
+<style>
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .flex-item {
+    flex: 0 0 auto; /* Adjust this percentage to change the number of columns */
+    margin: 5px;
+    padding: 0;
+    box-sizing: border-box; 
+  }
+
+  .project-span {
+    display: block; 
+    background-color: #efefef;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center; 
+    border-radius: 7px;
+  }
+</style>
+
+<div class="flex-container">
+    <div class="flex-item"><span class="project-span">🖨️ 3D Printing</span></div>
+    <div class="flex-item"><span class="project-span">📸 Photography</span></div>
+    <div class="flex-item"><span class="project-span">🔓 Locks (legally ofc)</span></div>
+    <div class="flex-item"><span class="project-span">🧵 Sewing & Knitting</span></div>
+    <div class="flex-item"><span class="project-span">🐕 Dog Care</span></div>
+    <div class="flex-item"><span class="project-span">📚 Reading</span></div>
+    <div class="flex-item"><span class="project-span">💻 Programming Challenges</span></div>
+    <div class="flex-item"><span class="project-span">🎥 Video Content Creation</span></div>
+    <div class="flex-item"><span class="project-span">🛠️ Volunteering</span></div>
+</div>

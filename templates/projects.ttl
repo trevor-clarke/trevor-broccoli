@@ -7,23 +7,29 @@
     list-style: none;
   }
   .flex-item {
-    flex: 1 1 175px;
-    margin: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 10px;
-    background-color: #f9f9f9;
+    flex: 0 0 auto; /* Adjust this percentage to change the number of columns */
+    margin: 5px;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in the total width */
+  }
+
+  .project-span {
+    display: block; /* Makes the span fill the flex-item */
+    background-color: #eee;
+    padding: 5px;
+    text-align: center; /* Centers the text within the span */
   }
 </style>
 
 <div class="flex-container">
-    <div class="flex-item">🥧 10k digits of pi on a table</div>
-    <div class="flex-item">💍 Refurbished silver ring company</div>
-    <div class="flex-item">🐕 Got a corgi</div>
-    <div class="flex-item">🖨️ Controlled receipt printer via JavaScript</div>
-    <div class="flex-item">✈️ Airplane doggo carrier</div>
-    <div class="flex-item">🌡️ 3D-printed analog-style temp display</div>
-    <div class="flex-item">🛠️ Built a faster 3D printer</div>
-    <div class="flex-item">🤖 AI-generated profile images</div>
-    <div class="flex-item">🚗 Changed winter tires myself</div>
-    <div class="flex-item">🎨 Created SketchThis.com</div>
+    <div class="flex-item"><span class="project-span">🥧 10k digits of pi on a table</span></div>
+    <div class="flex-item"><span class="project-span">💍 Refurbished silver ring company</span></div>
+    <div class="flex-item"><span class="project-span">🐕 Got a corgi</span></div>
+    <div class="flex-item"><span class="project-span">🖨️ Controlled receipt printer via JavaScript</span></div>
+    <div class="flex-item"><span class="project-span">✈️ Airplane doggo carrier</span></div>
+    <div class="flex-item"><span class="project-span">🌡️ 3D-printed analog-style temp display</span></div>
+    <div class="flex-item"><span class="project-span">🛠️ Built a faster 3D printer</span></div>
+    <div class="flex-item"><span class="project-span">🤖 AI-generated profile images</span></div>
+    <div class="flex-item"><span class="project-span">🚗 Changed winter tires myself</span></div>
+    <div class="flex-item"><span class="project-span">🎨 Created SketchThis.com</span></div>
 </div>
