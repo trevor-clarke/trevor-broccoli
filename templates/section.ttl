@@ -3,6 +3,7 @@
     margin-bottom: 20px;
     padding: 5px;
     font-size: 1em;
+    color: black;
   }
   section h4 {
     font-size: 1em;

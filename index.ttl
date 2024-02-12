@@ -39,7 +39,7 @@ container [
         ]
         section [
             title: 
-            body: <sub>This is a static page and re-generated when changes are made</sub>
+            body: <sub>Be kind, be creative, keep smiling. We're all on this rock together. <3</sub>
         ]
     }
 ]
