@@ -23,7 +23,8 @@
 
 <section class="content-section">
   <h4>{{ title }}</h2>
-  <p>{{ body }} <i><a class="link" href="{{link}}">{{link_text}}</a></i></p>
+  <p>{{ body }} </p>
+  <i><a class="link" href="{{link}}">{{link_text}}</a></i>
 </section>
 
 <hr class="section-hr" />

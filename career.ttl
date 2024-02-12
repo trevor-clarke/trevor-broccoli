@@ -6,7 +6,7 @@ container [
                 header_min[
                     title: Trevor Clarke
                     image_url: images/trevor_clarke.jpg
-                    body: 
+                    body: Transitioned from internships to Shopify as a Developer in Sep 2023.
                 ]
             }
         ]
