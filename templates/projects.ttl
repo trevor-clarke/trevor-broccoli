@@ -1,0 +1,29 @@
+<style>
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .flex-item {
+    flex: 1 1 175px;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+</style>
+
+<div class="flex-container">
+    <div class="flex-item">🥧 10k digits of pi on a table</div>
+    <div class="flex-item">💍 Refurbished silver ring company</div>
+    <div class="flex-item">🐕 Got a corgi</div>
+    <div class="flex-item">🖨️ Controlled receipt printer via JavaScript</div>
+    <div class="flex-item">✈️ Airplane doggo carrier</div>
+    <div class="flex-item">🌡️ 3D-printed analog-style temp display</div>
+    <div class="flex-item">🛠️ Built a faster 3D printer</div>
+    <div class="flex-item">🤖 AI-generated profile images</div>
+    <div class="flex-item">🚗 Changed winter tires myself</div>
+    <div class="flex-item">🎨 Created SketchThis.com</div>
+</div>
