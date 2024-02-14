@@ -1,97 +1,103 @@
 import os
 import re
+from .ttl_helpers import Stack, Node, ValueNode
+
 
 TTL_FILE_EXTENSION = ".ttl"
 
 
-class TTLRenderer:
+class Template:
+    def __init__(self, name, html, css):
+        self.name = name
+        self.html = html
+        self.css = css
+
+    @staticmethod
+    def from_file(file_path):
+        with open(file_path, "r") as f:
+            template_content = f.read()
+
+        css_pattern = re.compile(r"<style>(.*?)</style>", re.DOTALL)
+        css = "\n".join(css_pattern.findall(template_content))
+        html = re.sub(css_pattern, "", template_content).strip()
+
+        name = os.path.basename(file_path).split(".")[0]
+
+        return Template(name, html, css)
+
+
+class Templates:
     def __init__(self, template_directory):
         self.template_directory = template_directory
-        self.templates = self.load_template()
-        self.template_names = list(self.templates.keys()) + ["root"]
-
+        self.templates = self.load_templates()
         self.used_templates = set()
 
-    def separate_html_and_css(self, template_content):
-        # Regular expression to find style content
-        css_pattern = re.compile(r"<style>(.*?)</style>", re.DOTALL)
-        # Extract CSS
-        css = css_pattern.findall(template_content)
-        # Join all CSS parts if there are multiple style tags (unlikely in this case, but just to cover all bases)
-        css = "\n".join(css)
-        # Remove the style element from the template content to get HTML
-        html = re.sub(css_pattern, "", template_content)
-        return html.strip(), css.strip()
+    def load_templates(self):
+        templates = {}
+        for file in os.listdir(self.template_directory):
+            if file.endswith(TTL_FILE_EXTENSION):
+                template = Template.from_file(os.path.join(self.template_directory, file))
+                templates[template.name] = template
+        return templates
+
+    def get(self, name):
+        template = self.templates.get(name)
+        if template:
+            self.used_templates.add(name)
+        return template
 
     def generate_css(self):
         css = ""
         for template_name in self.used_templates:
-            css += self.templates[template_name]["css"]
+            css += self.templates.get(template_name).css
         return f"{css}\n"
 
-    def load_template(self):
-        templates = {}
-        for file in os.listdir(self.template_directory):
-            if file.endswith(TTL_FILE_EXTENSION):
-                name = file.split(".")[0]
-                with open(os.path.join(self.template_directory, file), "r") as f:
-                    template_content = f.read()
 
-                template_html, template_css = self.separate_html_and_css(
-                    template_content
-                )
-
-                templates[name] = {
-                    "html": template_html,
-                    "css": template_css,
-                }
-        return templates
+class TTLRenderer:
+    def __init__(self, template_directory):
+        self.templates = Templates(template_directory)
 
     def render_template(self, key, properties):
-        if key not in self.template_names:
+        template = self.templates.get(key)
+        if template is None:
             raise ValueError(f"Template {key} not found")
 
-        required_properties = re.findall(
-            r"\{\{\s*(\w+)\s*\}\}", self.templates[key]["html"]
-        )
+        required_properties = re.findall(r"\{\{\s*(\w+)\s*\}\}", template.html)
         handled_properties = {}
         for prop in properties:
-            if prop[0] not in required_properties:
-                raise ValueError(f"Property {prop[0]} not found in template {key}")
-            handled_properties[prop[0]] = prop[1]
+            if prop.name not in required_properties:
+                raise ValueError(f"Property {prop.name} not found in template {key}")
+            handled_properties[prop.name] = prop.children
 
         for prop in required_properties:
             if prop not in handled_properties:
-                # print(ValueError(f"Property {prop} not found in properties"))
                 handled_properties[prop] = ""
 
         for property, values in handled_properties.items():
-            if len(values) == 1 and isinstance(values[0], str):
-                handled_properties[property] = values[0]
+            if len(values) == 1 and isinstance(values[0], ValueNode):
+                handled_properties[property] = values[0].value
             else:
                 html = "".join(
                     [
-                        self.render_tree(value) if isinstance(value, tuple) else value
+                        self.render_tree(value) if isinstance(value, Node) else value.value
                         for value in values
                     ]
                 )
                 handled_properties[property] = html
 
-        template_copy = self.templates[key]["html"]
+        template_copy = template.html
         for prop, value in handled_properties.items():
             pattern = re.compile(r"\{\{\s*" + re.escape(prop) + r"\s*\}\}")
             template_copy = pattern.sub(value, template_copy)
-        self.used_templates.add(key)
         return template_copy
 
     def render_tree(self, tree):
-        left, right = tree
-        return self.render_template(left, right)
+        return self.render_template(tree.name, tree.children)
 
     def render_document(self, tree):
-        body = "".join([self.render_tree(child) for child in tree[1]])
+        body = "".join([self.render_tree(child) for child in tree.children])
         indented_body = "\n".join([f"\t{line}" for line in body.splitlines()])
-        css = self.generate_css()
+        css = self.templates.generate_css()
         indented_css = "\n".join([f"\t{line}" for line in css.splitlines()])
 
         result = "<!DOCTYPE html>\n"

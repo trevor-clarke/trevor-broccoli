@@ -11,8 +11,8 @@ class TTL:
         with open(input_file, "r") as i:
             tree = self.parser.parse(i.read())
             if tree:
-                self.parser.print_tree()
-            html = self.renderer.render_document(tree)
+                tree.print_tree()
+            html = self.renderer.render_document(tree.root)
 
         with open(output_file, "w") as o:
             o.write(html)
