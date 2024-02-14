@@ -1,4 +1,8 @@
-from .ttl_helpers import Stack, Node, ValueNode, Buffer, Tree, Token
+from ttl.helpers.buffer import Buffer
+from ttl.helpers.stack import Stack
+from ttl.helpers.token import Token
+from ttl.helpers.tree import Tree, Node, ValueNode
+
 
 class TTLParser:
     SINGLE_OPENERS = [":"]
