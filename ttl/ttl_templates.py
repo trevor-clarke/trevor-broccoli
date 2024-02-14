@@ -20,8 +20,6 @@ class Template:
 
     def render(self, props):
         html = self.html+""
-
-        # ensure passed props exist in template
         invalid_properties = set(props.keys()) - set(self.properties)
         if invalid_properties:
             raise ValueError(f"Invalid properties: {invalid_properties.keys()}")
