@@ -62,7 +62,7 @@ class TTLRenderer:
 
         for prop in required_properties:
             if prop not in handled_properties:
-                print(ValueError(f"Property {prop} not found in properties"))
+                # print(ValueError(f"Property {prop} not found in properties"))
                 handled_properties[prop] = ""
 
         for property, values in handled_properties.items():

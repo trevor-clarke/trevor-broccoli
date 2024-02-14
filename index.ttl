@@ -5,7 +5,7 @@ container [
             body {
                 header [
                     title: Trevor Clarke
-                    video_url: images/trevor_clarke.mp4
+                    image_url: images/trevor_clarke.jpg
                     body: 
                 ]
 
@@ -14,6 +14,23 @@ container [
         section [
             title: formatted: code {print("Hello, World! 👋")}}
             body: I'm <strong>Trevor Clarke</strong>, an ever-curious human.
+        ]
+         section [
+            title:
+            body {
+                square_video [
+                    video_url: images/trevor_clarke.mp4
+                ]
+                square_video [
+                    video_url: images/trevor_clarke.mp4
+                ]
+                square_video [
+                    video_url: images/trevor_clarke.mp4 
+                ]
+                square_video [
+                    video_url: images/trevor_clarke.mp4
+                ]
+            }
         ]
         section [
             title: Hobbies & Interests

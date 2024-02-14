@@ -12,24 +12,60 @@ class TTLParser:
 
     def parse(self, content):
         self.reset()
+        switch = {
+            ":": self.handle_colon,
+            "[": self.handle_bracket,
+            "{": self.handle_brace,
+            "\n": self.handle_newline,
+            ";": self.handle_semicolon,
+            "]": self.handle_close_bracket,
+            "}": self.handle_close_brace
+        }
         for char in content:
-            if char in ["[", "{", ":"]:
-                if char == ":":
-                    self.single_line = True
-                new_node = (self.buffer.strip(), [])
-                self.buffer = ""
-                self.stack[-1][1].append(new_node)
-                self.stack.append(new_node)
-            elif char in ["]", "}"] or (char in ["\n", ";"] and self.single_line):
-                if char in ["\n", ";"]:
-                    self.single_line = False
-                if self.buffer.strip():
-                    self.stack[-1][1].append(self.buffer.strip())
-                    self.buffer = ""
-                self.stack.pop()
-            else:
-                self.buffer += char
+            func = switch.get(char, self.handle_default)
+            func(char)
         return self.root
+
+    def handle_colon(self, char):
+        self.single_line = True
+        self.handle_open(char)
+
+    def handle_bracket(self, char):
+        self.handle_open(char)
+
+    def handle_brace(self, char):
+        self.handle_open(char)
+
+    def handle_newline(self, char):
+        if self.single_line:
+            self.single_line = False
+            self.handle_close(char)
+
+    def handle_semicolon(self, char):
+        if self.single_line:
+            self.single_line = False
+            self.handle_close(char)
+
+    def handle_close_bracket(self, char):
+        self.handle_close(char)
+
+    def handle_close_brace(self, char):
+        self.handle_close(char)
+
+    def handle_open(self, char):
+        new_node = (self.buffer.strip(), [])
+        self.buffer = ""
+        self.stack[-1][1].append(new_node)
+        self.stack.append(new_node)
+
+    def handle_close(self, char):
+        if self.buffer.strip():
+            self.stack[-1][1].append(self.buffer.strip())
+            self.buffer = ""
+        self.stack.pop()
+
+    def handle_default(self, char):
+        self.buffer += char
 
     def print_tree(self, tree=None, level=0):
         if tree is None:
