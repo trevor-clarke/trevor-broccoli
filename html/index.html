@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <style id="root">
+            	
+	  .flex-container {
+	    display: flex;
+	    flex-wrap: wrap;
+	    padding: 0;
+	    margin: 0;
+	    list-style: none;
+	  }
+	  .flex-item {
+	    flex: 0 0 auto; /* Adjust this percentage to change the number of columns */
+	    margin: 5px;
+	    padding: 0;
+	    box-sizing: border-box; /* Ensures padding and border are included in the total width */
+	  }
+	
+	  .project-span {
+	    display: block; /* Makes the span fill the flex-item */
+	    background-color: #eee;
+	    padding: 5px;
+	    text-align: center; /* Centers the text within the span */
+	  }
+	
+	  .profile-section {
+	    display: flex;
+	    align-items: center;
+	  }
+	  .profile-image {
+	    width: 100px;
+	    height: 100px;
+	    border-radius: 50%;
+	    display: block;
+	  }
+	  .profile-text {
+	    padding-right: 20px; /* Add some space between the image and the text */
+	  }
+	
+	  .flex-container {
+	    display: flex;
+	    flex-wrap: wrap;
+	    padding: 0;
+	    margin: 0;
+	    list-style: none;
+	  }
+	  .flex-item {
+	    flex: 0 0 auto; /* Adjust this percentage to change the number of columns */
+	    margin: 5px;
+	    padding: 0;
+	    box-sizing: border-box; 
+	  }
+	
+	  .project-span {
+	    display: block; 
+	    background-color: #efefef;
+	    padding-top: 7px;
+	    padding-bottom: 7px;
+	    padding-left: 15px;
+	    padding-right: 15px;
+	    text-align: center; 
+	    border-radius: 7px;
+	  }
+	
+	    pre{
+	        border: 0px !important;
+	        font-size: 1.1em !important;
+	    }    
+	
+	  section {
+	    margin-bottom: 20px;
+	    padding: 5px;
+	    font-size: 1em;
+	    color: black;
+	  }
+	  section h4 {
+	    font-size: 1em;
+	  }
+	  .section-hr {
+	    border-top: 1px solid #ddd;
+	    margin-bottom: 20px;
+	  }
+	
+	  a {
+	    color: black;
+	  }
+	
+	  .link {
+	    color: #aaa !important;
+	  }
+	
+	      .container {
+	        padding: 20px;
+	        max-width: 800px;
+	        margin: auto;
+	        font-family: Arial, sans-serif;
+	
+	      }
+	      @media (max-width: 768px) {
+	        .container {
+	          padding: 10px;
+	        }
+	      }
+	
+	  .video-section {
+	    display: inline-block;
+	    align-items: center;
+	    justify-content: center;
+	    position: relative;
+	    width: 100px;
+	    height: 100px;
+	    border-radius: 20px;
+	    overflow: hidden;
+	    margin-right: 5px;
+	  }
+	  .video-section::before {
+	    content: "";
+	    position: absolute;
+	    top: 2px;
+	    left: 2px;
+	    right: 2px;
+	    bottom: 2px;
+	    border-radius: 20px;
+	    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+	  }
+	  .rounded-video {
+	    width: 100%;
+	    height: 100%;
+	    object-fit: cover;
+	  }
+	 
+        </style>
+    </head>
+    <body>
+        	<div class="container">
+	  <p><section class="content-section">
+	  <h4></h2>
+	  <p><header class="profile-section">
+	  <div class="profile-text">
+	    <a href="/"><h2>Trevor Clarke</h2></a>
+	    <p></p>
+	  </div>
+	  <img src="images/trevor_clarke.jpg" alt="Trevor Clarke" class="profile-image" />
+	</header> </p>
+	  <i><a class="link" href=""></a></i>
+	</section>
+	
+	<hr class="section-hr" /><section class="content-section">
+	  <h4><pre class="prettyprint">print("Hello, World! 👋")</pre>
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script></h2>
+	  <p>I'm <strong>Trevor Clarke</strong>, an ever-curious human. </p>
+	  <i><a class="link" href=""></a></i>
+	</section>
+	
+	<hr class="section-hr" /><section class="content-section">
+	  <h4></h2>
+	  <p><div class="video-section">
+	  <video class="rounded-video" src="images/trevor_clarke.mp4" autoplay loop muted></video>
+	</div><div class="video-section">
+	  <video class="rounded-video" src="images/trevor_clarke.mp4" autoplay loop muted></video>
+	</div><div class="video-section">
+	  <video class="rounded-video" src="images/trevor_clarke.mp4" autoplay loop muted></video>
+	</div><div class="video-section">
+	  <video class="rounded-video" src="images/trevor_clarke.mp4" autoplay loop muted></video>
+	</div> </p>
+	  <i><a class="link" href=""></a></i>
+	</section>
+	
+	<hr class="section-hr" /><section class="content-section">
+	  <h4>Hobbies & Interests</h2>
+	  <p><div class="flex-container">
+	    <div class="flex-item"><span class="project-span">🖨️ 3D Printing</span></div>
+	    <div class="flex-item"><span class="project-span">📸 Photography</span></div>
+	    <div class="flex-item"><span class="project-span">🔓 Locks (legally ofc)</span></div>
+	    <div class="flex-item"><span class="project-span">🧵 Sewing & Knitting</span></div>
+	    <div class="flex-item"><span class="project-span">📚 Reading</span></div>
+	    <div class="flex-item"><span class="project-span">💻 Programming Challenges</span></div>
+	    <div class="flex-item"><span class="project-span">🎥 Video Content Creation</span></div>
+	    <div class="flex-item"><span class="project-span">🛠️ Volunteering</span></div>
+	</div> </p>
+	  <i><a class="link" href=""></a></i>
+	</section>
+	
+	<hr class="section-hr" /><section class="content-section">
+	  <h4>Career</h2>
+	  <p>I've experienced <i>5 years of university</i>, <i>6 internships</i>, and
+	<strong>countless amazing people</strong>. <br /><br />
+	
+	I'm currently at
+	<a href="https://Shopify.com" target="_blank" rel="noopener noreferrer"
+	  >Shopify</a
+	>, working on
+	<a
+	  href="https://shopify.engineering/how-shopify-reduced-storefront-response-times-rewrite"
+	  target="_blank"
+	  rel="noopener noreferrer"
+	  >Storefront Renderer</a
+	>. </p>
+	  <i><a class="link" href="/career">see more</a></i>
+	</section>
+	
+	<hr class="section-hr" /><section class="content-section">
+	  <h4>Socials</h2>
+	  <p><a href="https://github.com/trevor-clarke">GitHub</a>
+	<a href="https://www.linkedin.com/in/trevorclarketc/">LinkedIn</a>
+	<a href="https://www.instagram.com/_trevorc_/">Instagram</a>
+	<a href="https://www.instagram.com/trevorhassnap/">Instagram (private)</a>
+	<a href="https://www.snapchat.com/add/trevorhassnap">Snapchat</a>
+	<a href="https://www.youtube.com/@GoForTrevor">YouTube</a> </p>
+	  <i><a class="link" href=""></a></i>
+	</section>
+	
+	<hr class="section-hr" /><section class="content-section">
+	  <h4>Projects & Contributions</h2>
+	  <p><div class="flex-container">
+	    <div class="flex-item"><span class="project-span">🥧 10k digits of pi on a table</span></div>
+	    <div class="flex-item"><span class="project-span">💍 Refurbished silver ring company</span></div>
+	    <div class="flex-item"><span class="project-span">🐕 Got a corgi</span></div>
+	    <div class="flex-item"><span class="project-span">🖨️ Controlled receipt printer via JavaScript</span></div>
+	    <div class="flex-item"><span class="project-span">✈️ Airplane doggo carrier</span></div>
+	    <div class="flex-item"><span class="project-span">🌡️ 3D-printed analog-style temp display</span></div>
+	    <div class="flex-item"><span class="project-span">🛠️ Built a faster 3D printer</span></div>
+	    <div class="flex-item"><span class="project-span">🤖 AI-generated profile images</span></div>
+	    <div class="flex-item"><span class="project-span">🚗 Changed winter tires myself</span></div>
+	    <div class="flex-item"><span class="project-span">🎨 Created SketchThis.com</span></div>
+	</div> </p>
+	  <i><a class="link" href=""></a></i>
+	</section>
+	
+	<hr class="section-hr" /><section class="content-section">
+	  <h4>Future Ideas</h2>
+	  <p>🔠 Wordle tool for best start word, 📸 Profile photo from 1km, 💡 Google Ads vs dating apps, 🚪 Auto buzzer response app </p>
+	  <i><a class="link" href=""></a></i>
+	</section>
+	
+	<hr class="section-hr" /><section class="content-section">
+	  <h4></h2>
+	  <p><sub>Be kind, be creative, keep smiling. We're all on this rock together. <3</sub> </p>
+	  <i><a class="link" href=""></a></i>
+	</section>
+	
+	<hr class="section-hr" /></p>
+	</div>
+    </body>
+</html>
+<!-- File Generated by Trevor's Templating Language -->
