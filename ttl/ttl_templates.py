@@ -1,15 +1,38 @@
 import os
 import re
 
+from ttl.helpers.node import Node, ValueNode
+
 TTL_FILE_EXTENSION = ".ttl"
+
+#pass in arrray of properties to initaliszer 
+# 
 
 
 class Template:
-    def __init__(self, name, html, css):
+    def __init__(self, name, html, css, properties):
         self.name = name
         self.html = html
         self.css = css
+        self.properties = properties
 
+    VARIABLE_PATTERN = re.compile(r"\{\{\s*(\w+)\s*\}\}")
+
+    def render(self, props):
+        html = self.html+""
+
+        # ensure passed props exist in template
+        invalid_properties = set(props.keys()) - set(self.properties)
+        if invalid_properties:
+            raise ValueError(f"Invalid properties: {invalid_properties.keys()}")
+
+        for property in self.properties:
+            value = props.get(property) or ""
+            pattern = re.compile(r"\{\{\s*" + re.escape(property) + r"\s*\}\}")
+            html = pattern.sub(value, html)
+        return html
+
+   
     @staticmethod
     def from_file(file_path):
         with open(file_path, "r") as f:
@@ -21,7 +44,9 @@ class Template:
 
         name = os.path.basename(file_path).split(".")[0]
 
-        return Template(name, html, css)
+        properties = re.findall(Template.VARIABLE_PATTERN, html)
+
+        return Template(name, html, css, properties)
 
 
 class Templates:
@@ -42,6 +67,8 @@ class Templates:
         template = self.templates.get(name)
         if template:
             self.used_templates.add(name)
+        if template is None:
+            raise ValueError(f"Template {name} not found")
         return template
 
     def generate_css(self):
