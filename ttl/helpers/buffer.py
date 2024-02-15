@@ -12,4 +12,5 @@ class Buffer:
         self.buffer += char
     
     def not_empty(self):
-        return bool(self.buffer)
+        temp = self.buffer.strip()
+        return bool(temp)

@@ -1,63 +1,14 @@
-container [
-    body {
-        section [
-            title: 
-            body {
-                header [
-                    title: Trevor Clarke
-                    image_url: images/trevor_clarke.jpg
-                    body: 
-                ]
-
-            }
-        ]
-        section [
-            title: formatted: code {print("Hello, World! 👋")}}
-            body: I'm <strong>Trevor Clarke</strong>, an ever-curious human.
-        ]
-         section [
-            title:
-            body {
-                square_video [
-                    video_url: images/trevor_clarke.mp4
-                ]
-                square_video [
-                    video_url: images/trevor_clarke.mp4
-                ]
-                square_video [
-                    video_url: images/trevor_clarke.mp4 
-                ]
-                square_video [
-                    video_url: images/trevor_clarke.mp4
-                ]
-            }
-        ]
-        section [
-            title: Hobbies & Interests
-            body: hobbies[]
-        ]
-        section [
-            title: Career
-            body: trevor_clarke_bio[]
-            link: /career
-            link_text:  see more
-        ]
-        section [
-            title: Socials
-            body: social_links[]
-        ]
-
-        section [
-            title: Projects & Contributions
-            body: projects[]
-        ]
-        section [
-            title: Future Ideas
-            body: 🔠 Wordle tool for best start word, 📸 Profile photo from 1km, 💡 Google Ads vs dating apps, 🚪 Auto buzzer response app
-        ]
-        section [
-            title: 
-            body: <sub>Be kind, be creative, keep smiling. We're all on this rock together. <3</sub>
-        ]
-    }
-]
+container:  body {
+    section: body: header: title: Trevor Clarke; image_url: images/trevor_clarke.jpg;
+    section { 
+        title: formatted: code: print("Hello, World! 👋")
+        body: I'm <strong>Trevor Clarke</strong>, an ever-curious human.
+    } 
+    section: body: square_video: video_url: images/trevor_clarke.mp4
+    section: title: Hobbies & Interests; body: hobbies[]
+    section: title: Career; body: trevor_clarke_bio[]; link: /career; link_text: see more
+    section: title: Socials; body: social_links[]
+    section: title: Projects & Contributions; body: projects[]
+    section: title: Future Ideas; body: ideas[]
+    section: body: <sub> Be kind, be creative, keep smiling. We're all on this rock together. <3</sub>
+}

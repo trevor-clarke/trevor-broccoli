@@ -1,39 +1,29 @@
-container [
-    body {
-        section [
-            title:
-            body {
-                header_min[
-                    title: Trevor Clarke
-                    image_url: images/trevor_clarke.jpg
-                    body: Transitioned from internships to Shopify as a Developer in Sep 2023.
-                ]
-            }
-        ]
-
-        section [
-            title: Developer @ Shopify
-            body: Sep 2023 - Present, full-time, improving Shopify's Storefront Renderer, Toronto, remote.
-        ]
-
-         section [
-            title: Intern @ Shopify
-            body: Jan 2022 - Apr 2023, developed on Shopify's Storefront Renderer, Toronto, part-time and full-time.
-        ]
-
-        section [
-            title: Intern @ Shopify
-            body: May 2021 - December 2021, contributed to Shopify's Fulfillment Network, Toronto, part-time and full-time.
-        ]
-
-         section [
-            title: Intern @ Bank of Montreal
-            body: Sep 2020 - Apr 2021, developed internal software using Python, Java, and Selenium, Toronto, part-time and full-time.
-        ]
-
-         section [
-            title: Intern @ BeeHome
-            body: Jan 2020 - Sep 2020, full stack development including a web-store and 3D product visualizer, Toronto.
-        ]
+container: body {
+    section: body: header_min [
+        title: Trevor Clarke
+        image_url: images/trevor_clarke.jpg
+        body: Transitioned from internships to Shopify as a Developer in Sep 2023.
+    ]
+        
+    section: title: Developer @ Shopify; body { 
+        Sep 2023 - Present, full-time, improving Shopify's Storefront Renderer, Toronto, remote.
     }
-]
+
+    section: title: Intern @ Shopify; body { 
+        Jan 2022 - Apr 2023, developed on Shopify's Storefront Renderer, Toronto, part-time and full-time. 
+    }
+    
+
+    section: title: Intern @ Shopify; body{
+        May 2021 - December 2021, contributed to Shopify's Fulfillment Network, Toronto, part-time and full-time.
+    }   
+
+    section: title: Intern @ Bank of Montreal; body{ 
+        Sep 2020 - Apr 2021, developed internal software using Python, Java, and Selenium, Toronto, part-time and full-time.
+    }
+
+    section: title: Intern @ BeeHome; body{ 
+        Jan 2020 - Sep 2020, full stack development including a web-store and 3D product visualizer, Toronto.
+    }
+}
+

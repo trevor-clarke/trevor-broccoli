@@ -66,6 +66,8 @@ class Templates:
         if template:
             self.used_templates.add(name)
         if template is None:
+            if len(name) > 1:
+                return self.get(name[0:1])
             raise ValueError(f"Template {name} not found")
         return template
 

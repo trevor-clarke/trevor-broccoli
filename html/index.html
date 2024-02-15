@@ -5,39 +5,39 @@
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <style id="root">
             	
-	  .flex-container {
-	    display: flex;
-	    flex-wrap: wrap;
-	    padding: 0;
-	    margin: 0;
-	    list-style: none;
-	  }
-	  .flex-item {
-	    flex: 0 0 auto; /* Adjust this percentage to change the number of columns */
-	    margin: 5px;
-	    padding: 0;
-	    box-sizing: border-box; /* Ensures padding and border are included in the total width */
-	  }
+	      .container {
+	        padding: 20px;
+	        max-width: 800px;
+	        margin: auto;
+	        font-family: Arial, sans-serif;
 	
-	  .project-span {
-	    display: block; /* Makes the span fill the flex-item */
-	    background-color: #eee;
+	      }
+	      @media (max-width: 768px) {
+	        .container {
+	          padding: 10px;
+	        }
+	      }
+	
+	  section {
+	    margin-bottom: 20px;
 	    padding: 5px;
-	    text-align: center; /* Centers the text within the span */
+	    font-size: 1em;
+	    color: black;
+	  }
+	  section h4 {
+	    font-size: 1em;
+	  }
+	  .section-hr {
+	    border-top: 1px solid #ddd;
+	    margin-bottom: 20px;
 	  }
 	
-	  .profile-section {
-	    display: flex;
-	    align-items: center;
+	  a {
+	    color: black;
 	  }
-	  .profile-image {
-	    width: 100px;
-	    height: 100px;
-	    border-radius: 50%;
-	    display: block;
-	  }
-	  .profile-text {
-	    padding-right: 20px; /* Add some space between the image and the text */
+	
+	  .link {
+	    color: #aaa !important;
 	  }
 	
 	  .flex-container {
@@ -65,45 +65,40 @@
 	    border-radius: 7px;
 	  }
 	
-	    pre{
-	        border: 0px !important;
-	        font-size: 1.1em !important;
-	    }    
+	  .profile-section {
+	    display: flex;
+	    align-items: center;
+	  }
+	  .profile-image {
+	    width: 100px;
+	    height: 100px;
+	    border-radius: 50%;
+	    display: block;
+	  }
+	  .profile-text {
+	    padding-right: 20px; /* Add some space between the image and the text */
+	  }
 	
-	  section {
-	    margin-bottom: 20px;
+	  .flex-container {
+	    display: flex;
+	    flex-wrap: wrap;
+	    padding: 0;
+	    margin: 0;
+	    list-style: none;
+	  }
+	  .flex-item {
+	    flex: 0 0 auto; /* Adjust this percentage to change the number of columns */
+	    margin: 5px;
+	    padding: 0;
+	    box-sizing: border-box; /* Ensures padding and border are included in the total width */
+	  }
+	
+	  .project-span {
+	    display: block; /* Makes the span fill the flex-item */
+	    background-color: #eee;
 	    padding: 5px;
-	    font-size: 1em;
-	    color: black;
+	    text-align: center; /* Centers the text within the span */
 	  }
-	  section h4 {
-	    font-size: 1em;
-	  }
-	  .section-hr {
-	    border-top: 1px solid #ddd;
-	    margin-bottom: 20px;
-	  }
-	
-	  a {
-	    color: black;
-	  }
-	
-	  .link {
-	    color: #aaa !important;
-	  }
-	
-	      .container {
-	        padding: 20px;
-	        max-width: 800px;
-	        margin: auto;
-	        font-family: Arial, sans-serif;
-	
-	      }
-	      @media (max-width: 768px) {
-	        .container {
-	          padding: 10px;
-	        }
-	      }
 	
 	  .video-section {
 	    display: inline-block;
@@ -131,6 +126,11 @@
 	    height: 100%;
 	    object-fit: cover;
 	  }
+	
+	    pre{
+	        border: 0px !important;
+	        font-size: 1.1em !important;
+	    }    
 	 
         </style>
     </head>
@@ -158,12 +158,6 @@
 	<hr class="section-hr" /><section class="content-section">
 	  <h4></h2>
 	  <p><div class="video-section">
-	  <video class="rounded-video" src="images/trevor_clarke.mp4" autoplay loop muted></video>
-	</div><div class="video-section">
-	  <video class="rounded-video" src="images/trevor_clarke.mp4" autoplay loop muted></video>
-	</div><div class="video-section">
-	  <video class="rounded-video" src="images/trevor_clarke.mp4" autoplay loop muted></video>
-	</div><div class="video-section">
 	  <video class="rounded-video" src="images/trevor_clarke.mp4" autoplay loop muted></video>
 	</div> </p>
 	  <i><a class="link" href=""></a></i>
@@ -238,7 +232,7 @@
 	
 	<hr class="section-hr" /><section class="content-section">
 	  <h4></h2>
-	  <p><sub>Be kind, be creative, keep smiling. We're all on this rock together. <3</sub> </p>
+	  <p><sub> Be kind, be creative, keep smiling. We're all on this rock together. <3</sub> </p>
 	  <i><a class="link" href=""></a></i>
 	</section>
 	
