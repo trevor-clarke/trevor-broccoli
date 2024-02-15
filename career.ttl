@@ -13,7 +13,6 @@ container: body {
         Jan 2022 - Apr 2023, developed on Shopify's Storefront Renderer, Toronto, part-time and full-time. 
     }
     
-
     section: title: Intern @ Shopify; body{
         May 2021 - December 2021, contributed to Shopify's Fulfillment Network, Toronto, part-time and full-time.
     }   
