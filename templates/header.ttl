@@ -10,7 +10,7 @@
     display: block;
   }
   .profile-text {
-    padding-right: 20px; /* Add some space between the image and the text */
+    padding-right: 20px;
   }
 </style>
 <header class="profile-section">

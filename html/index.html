@@ -5,39 +5,39 @@
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <style id="root">
             	
-	      .container {
-	        padding: 20px;
-	        max-width: 800px;
-	        margin: auto;
-	        font-family: Arial, sans-serif;
+	  .profile-section {
+	    display: flex;
+	    align-items: center;
+	  }
+	  .profile-image {
+	    width: 100px;
+	    height: 100px;
+	    border-radius: 50%;
+	    display: block;
+	  }
+	  .profile-text {
+	    padding-right: 20px;
+	  }
 	
-	      }
-	      @media (max-width: 768px) {
-	        .container {
-	          padding: 10px;
-	        }
-	      }
+	  .flex-container {
+	    display: flex;
+	    flex-wrap: wrap;
+	    padding: 0;
+	    margin: 0;
+	    list-style: none;
+	  }
+	  .flex-item {
+	    flex: 0 0 auto; /* Adjust this percentage to change the number of columns */
+	    margin: 5px;
+	    padding: 0;
+	    box-sizing: border-box; /* Ensures padding and border are included in the total width */
+	  }
 	
-	  section {
-	    margin-bottom: 20px;
+	  .project-span {
+	    display: block; /* Makes the span fill the flex-item */
+	    background-color: #eee;
 	    padding: 5px;
-	    font-size: 1em;
-	    color: black;
-	  }
-	  section h4 {
-	    font-size: 1em;
-	  }
-	  .section-hr {
-	    border-top: 1px solid #ddd;
-	    margin-bottom: 20px;
-	  }
-	
-	  a {
-	    color: black;
-	  }
-	
-	  .link {
-	    color: #aaa !important;
+	    text-align: center; /* Centers the text within the span */
 	  }
 	
 	  .flex-container {
@@ -65,40 +65,45 @@
 	    border-radius: 7px;
 	  }
 	
-	  .profile-section {
-	    display: flex;
-	    align-items: center;
-	  }
-	  .profile-image {
-	    width: 100px;
-	    height: 100px;
-	    border-radius: 50%;
-	    display: block;
-	  }
-	  .profile-text {
-	    padding-right: 20px; /* Add some space between the image and the text */
-	  }
+	    pre{
+	        border: 0px !important;
+	        font-size: 1.1em !important;
+	    }    
 	
-	  .flex-container {
-	    display: flex;
-	    flex-wrap: wrap;
-	    padding: 0;
-	    margin: 0;
-	    list-style: none;
-	  }
-	  .flex-item {
-	    flex: 0 0 auto; /* Adjust this percentage to change the number of columns */
-	    margin: 5px;
-	    padding: 0;
-	    box-sizing: border-box; /* Ensures padding and border are included in the total width */
-	  }
-	
-	  .project-span {
-	    display: block; /* Makes the span fill the flex-item */
-	    background-color: #eee;
+	  section {
+	    margin-bottom: 20px;
 	    padding: 5px;
-	    text-align: center; /* Centers the text within the span */
+	    font-size: 1em;
+	    color: black;
 	  }
+	  section h4 {
+	    font-size: 1em;
+	  }
+	  .section-hr {
+	    border-top: 1px solid #ddd;
+	    margin-bottom: 20px;
+	  }
+	
+	  a {
+	    color: black;
+	  }
+	
+	  .link {
+	    color: #aaa !important;
+	  }
+	
+	      .container {
+	        padding: 20px;
+	        max-width: 800px;
+	        margin: auto;
+	        font-family: Arial, sans-serif;
+	
+	      }
+	      @media (max-width: 768px) {
+	        .container {
+	          padding: 10px;
+	        }
+	      }
 	
 	  .video-section {
 	    display: inline-block;
@@ -127,11 +132,6 @@
 	    object-fit: cover;
 	  }
 	
-	    pre{
-	        border: 0px !important;
-	        font-size: 1.1em !important;
-	    }    
-	 
         </style>
     </head>
     <body>

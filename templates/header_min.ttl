@@ -10,13 +10,17 @@
     display: block;
   }
   .profile-text {
-    padding-right: 20px; /* Add some space between the image and the text */
+    padding-right: 20px;
   }
 </style>
 <header class="profile-section">
   <div class="profile-text">
-    <a href="/"><h2>{{ title }}</h2></a>
+    <a href="/">
+      <h2>
+        Trevor Clarke
+      </h2>
+    </a>
     <p>{{ body }}</p>
   </div>
-  <img src="{{ image_url }}" alt="Trevor Clarke" class="profile-image" />
+  <img src="images/trevor_clarke.jpg" alt="Trevor Clarke" class="profile-image" />
 </header>
