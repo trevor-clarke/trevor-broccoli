@@ -40,8 +40,5 @@ class TTLRenderer:
             [self.render_template(value) if isinstance(value, Node) else value.value for value in children]
         )
 
-
-
-
     def _indent_lines(self, text, indent="\t"):
         return "\n".join([f"{indent}{line}" for line in text.splitlines()])

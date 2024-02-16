@@ -1,0 +1,31 @@
+<style>
+  section {
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: 1em;
+    color: black;
+  }
+  section h4 {
+    font-size: 1em;
+  }
+  .section-hr {
+    border-top: 1px solid #ddd;
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: black;
+  }
+
+  .link {
+    color: #aaa !important;
+  }
+</style>
+
+<section class="content-section">
+  <h4>{{ title }}</h2>
+  <p>{{ body }} </p>
+  <i><a class="link" href="{{link}}">{{link_text}}</a></i>
+</section>
+
+<hr class="section-hr" />

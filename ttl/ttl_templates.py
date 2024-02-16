@@ -5,9 +5,6 @@ from ttl.helpers.node import Node, ValueNode
 
 TTL_FILE_EXTENSION = ".ttl"
 
-#pass in arrray of properties to initaliszer 
-# 
-
 
 class Template:
     def __init__(self, name, html, css, properties):
@@ -48,6 +45,9 @@ class Template:
 
 
 class Templates:
+
+    HTML_TAGS =html_tags = ["!DOCTYPE", "a", "abbr", "acronym", "address", "applet", "area", "article", "aside", "audio", "b", "base", "basefont", "bdi", "bdo", "big", "blockquote", "body", "br", "button", "canvas", "caption", "center", "cite", "code", "col", "colgroup", "data", "datalist", "dd", "del", "details", "dfn", "dialog", "dir", "div", "dl", "dt", "em", "embed", "fieldset", "figcaption", "figure", "font", "footer", "form", "frame", "frameset", "h1", "h2", "h3", "h4", "h5", "h6", "head", "header", "hr", "html", "i", "iframe", "img", "input", "ins", "kbd", "label", "legend", "li", "link", "main", "map", "mark", "meta", "meter", "nav", "noframes", "noscript", "object", "ol", "optgroup", "option", "output", "p", "param", "picture", "pre", "progress", "q", "rp", "rt", "ruby", "s", "samp", "script", "section", "select", "small", "source", "span", "strike", "strong", "style", "sub", "summary", "sup", "svg", "table", "tbody", "td", "template", "textarea", "tfoot", "th", "thead", "time", "title", "tr", "track", "tt", "u", "ul", "var", "video", "wbr"]
+    
     def __init__(self, template_directory):
         self.template_directory = template_directory
         self.templates = self.load_templates()
@@ -59,7 +59,14 @@ class Templates:
             if file.endswith(TTL_FILE_EXTENSION):
                 template = Template.from_file(os.path.join(self.template_directory, file))
                 templates[template.name] = template
+
+        # now load all html tags as templates (eg: body)
+        for tag in self.HTML_TAGS:
+            template = Template(tag, f"<{tag}>{{{{body}}}}</{tag}>", "", ["body"])
+            templates[tag] = template
+
         return templates
+    
 
     def get(self, name):
         template = self.templates.get(name)
@@ -76,3 +83,4 @@ class Templates:
         for template_name in self.used_templates:
             css += self.templates.get(template_name).css
         return f"{css}\n"
+    

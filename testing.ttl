@@ -1,3 +1,95 @@
-container: Hello! This should appear when things are working!
+details(id: "about-me",
+title: "hello",
+body: {
+
+        // text here and
+        // one or more templates
+    }
+
+)
+
+my_info = [("Trevor", "At shopify")]
+
+my_info -> section(<id: "my-id">, title: { [1] "we write code" } } , body: {
+{Hello there, } [0]
+})
+
+container({
+header(
+image_url: "images/trevor_clarke.jpg",
+image_url: "images/trevor_clarke.jpg",
+image_url: "images/trevor_clarke.jpg",
+)({
+Hello world!
+})
+
+})
+
+index_sections = [
+[(title: "my title", body)()]
+]
+
+index_sections [
+section(1, 2)
+]
+
+section
 
 
+_projects = [
+    ("Photography", ":camera:")
+    ("Reading", ":book:")
+    ("Coding", ":computer:")
+]
+
+_sections = [
+    ("Projects", {
+        These are the projects I've done:
+        _project =>  {
+            <div>
+                <h3>[0]</h3>
+                <p>[1]</p>
+            </div>
+        }
+    })
+]
+
+
+
+
+
+
+
+container:  body {
+    section: body:  image_url:
+    section {
+        title: formatted: code: print("Hello, World! 👋")
+        body: I'm <strong>Trevor Clarke</strong>, an ever-curious human.
+    }
+    section: body: square_video: video_url: images/trevor_clarke.mp4
+    section: title: Hobbies & Interests; body: hobbies[]
+    section: title: Career; body: trevor_clarke_bio[]; link: /career; link_text: see more
+    section: title: Socials; body: social_links[]
+    section: title: Projects & Contributions; body: projects[]
+    section: title: Future Ideas; body: ideas[]
+    section: body: <sub> Be kind, be creative, keep smiling. We're all on this rock together. <3</sub>
+} 
+
+
+
+
+projects = [
+    ("Photography", "I love taking photos of the world around me.", "images/trevor_clarke.jpg")
+    ("Reading", "I'm always reading something new.", "images/trevor_clarke.jpg")
+    ("Coding", "I'm a software developer by trade.", "images/trevor_clarke.jpg")
+]
+
+Project = (title:, body:, url:){     # this is an inline template 
+    <div id="[index]">
+        <h3>[title]</h3>
+        <p>[body]</p>
+        <Image(url: [url])>            # a nested template lives as a "tag"
+    </div>}
+}
+
+projects -> Project(title: [0], body: [1], url: [2]) f

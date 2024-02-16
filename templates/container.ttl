@@ -14,5 +14,5 @@
 </style>
 
 <div class="container">
-  <p>{{body}}</p>
+  <p>{{0}}</p>
 </div>

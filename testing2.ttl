@@ -1,0 +1,25 @@
+# projects.ttl
+
+Projects(title: body: url:){
+    Project = (title:, body:, url:){     # this is an inline template 
+        <div id="[index]">
+            <h3>[title]</h3>
+            <p>[body]</p>
+            <Image(url: [url])>          # a nested template lives as a "tag"
+        </div>}
+    }
+
+    projects -> Project(title: [0], body: [1], url: [2])
+}
+
+
+# index.ttl 
+
+projects = [
+    ("Photography", "I love taking photos of the world around me.", "images/trevor_clarke.jpg")
+    ("Reading", "I'm always reading something new.", "images/trevor_clarke.jpg")
+    ("Coding", "I'm a software developer by trade.", "images/trevor_clarke.jpg")
+]
+
+projects -> Projects(title: [0], body: [1], url: [2])
+
