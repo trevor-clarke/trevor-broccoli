@@ -1,16 +1,58 @@
 from ttl.helpers.buffer import Buffer
 from ttl.helpers.stack import Stack
-from ttl.helpers.tree import Tree, Node, ValueNode
+# from ttl.helpers.tree import Tree
+
+
+class Tree:
+    def __init__(self):
+        self.root = Scope("root", "root")
+
+    def add_child(self, parent, child):
+        parent.children.append(child)
+
+    def print_tree(self, node=None, level=0):
+        if node is None:
+            node = self.root
+        print(f"{'  ' * level}[{node.type}] {node.name}")
+
+        for child in node.children or ["-"]:
+            self.print_tree(child, level + 1)
+
+
+class Scope:
+
+    # "[", "{", "(", ":"
+    def determine_scope_type(opener):
+        if opener == "root":
+            return "root"
+        elif opener == "[":
+            return "list"
+        elif opener == "{":
+            return "body"
+        elif opener == "(":
+            return "properties"
+        elif opener == ":":
+            return "value"
+        else:
+            return "unknown"
+
+    def __init__(self, opener, name, children=None):
+        self.name = name
+        self.children = children
+        self.variables = {}
+        self.type = Scope.determine_scope_type(opener)
+
+
+
+class TokenType:
+    ASSIGNMENT = 'ASSIGNMENT'
+    STRING = 'STRING'
+    OPENER = 'OPENER'
+    CLOSER = 'CLOSER'
+    ARROW = 'ARROW'
+
 
 class TTLParser:
-    SINGLE_OPENERS = [":"]
-    MULTI_OPENERS = ["[", "{"]
-    SINGLE_CLOSERS = ["\n", ";"]
-    MULTI_CLOSERS = ["]", "}"]
-
-    ALL_OPENERS = SINGLE_OPENERS + MULTI_OPENERS
-    ALL_CLOSERS = SINGLE_CLOSERS + MULTI_CLOSERS
-
     def __init__(self):
         self.reset()
 
@@ -20,41 +62,21 @@ class TTLParser:
         self.stack = Stack()
         self.stack.push(self.tree.root)
 
-    def parse(self, content):
+    def parse(self, tokens):
         self.reset()
-        for char in content:
-            if self.is_opener(char):
-                self.handle_opener(char)
-            elif self.is_closer(char):
-                self.handle_closer(char)
-            else:
-                self.buffer.append(char)
+        for token_type, token_value in tokens:
+            if token_type == TokenType.STRING:
+                self.handle_string(token_value)
+            elif token_type == TokenType.OPENER:
+                self.handle_opener(token_value)
         return self.tree
 
-    def is_opener(self, char):
-        return char in self.ALL_OPENERS
-    
-    def is_closer(self, char):
-        return char in self.ALL_CLOSERS
-
-    def handle_opener(self, char):
-        single_line = char in self.SINGLE_OPENERS
-        new_node = Node(self.buffer.read(), [], single_line)
-        self.tree.add_child(self.stack.peek(), new_node)
-        self.stack.push(new_node)
-    
-    def handle_closer(self, char):
-        
+    def handle_string(self, string):
         if self.buffer.not_empty():
-            self.stack.peek().children.append(ValueNode(self.buffer.read()))
-
-        if char == "\n":
-            while self.stack.peek().single_line:
-                self.stack.pop()
-
-        elif char == ";":
-            if self.stack.peek().single_line:
-                self.stack.pop()
-
-        else:
-            self.stack.pop()
+            self.buffer.append(" ")
+        self.buffer.append(string)
+    
+    def handle_opener(self, opener):
+        self.stack.push(Scope(opener, self.buffer.pop()))
+    
+        

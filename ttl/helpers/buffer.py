@@ -3,7 +3,7 @@ class Buffer:
     def __init__(self):
         self.buffer = ""
 
-    def read(self):
+    def pop(self):
         temp = self.buffer.strip()
         self.buffer = ""
         return temp
